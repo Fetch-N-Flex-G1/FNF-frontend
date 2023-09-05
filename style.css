@@ -1,0 +1,319 @@
+.Main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: "white";
+}
+
+.bg-image{
+    width: 2000px;
+    height: 1000px;
+    left: 0px;
+    top: 0px;
+    position: absolute; 
+    background-image: url('images/bg.png');
+    background-size: cover;
+}
+
+.box{
+    width: 1009px;
+    height: 729px;
+    left: 455px;
+    top: 175px;
+    position: absolute;
+    background: #0E0B0B;
+    border-radius: 20px;
+    border: 1px rgba(225.45, 113.03, 49.79, 0.80) solid;
+}
+
+.Button{
+    position:absolute;
+    left:670px;
+    top:628px;
+    color:white;
+    font-size:20px;
+    font-family:'DM Sans'sans-serif;
+    font-weight:700;
+    word-wrap:break-word;
+    background-color:#EE6010;
+    padding:18px 55px;
+    border-radius:34.50px;
+    border:none;
+    cursor:pointer;
+}
+
+.German{
+    width: 411px;
+    height: 729px;
+    left: 1053px;
+    top: 175px;
+    position: absolute;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px;
+    object-fit: cover;
+}
+
+.left-border-image{
+    width: 411px;
+    height: 729px;
+    left: 1053px;
+    top: 175px; 
+    position:absolute; 
+    background: rgba(10.41, 8.42, 8.42, 0.47);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; 
+    border-left: 1px #C45719 solid;
+    backdrop-filter: blur(1px)
+}
+
+.image-text-newhere{
+    left: 1156px; 
+    top: 381px;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.69);
+    font-size: 40px;
+    font-family: DM Sans;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.sign-up{
+    width: 292px; 
+    height: 88px;
+    left: 1113px;
+    top: 496px;
+    position: absolute;
+    text-align: center;
+}
+
+.sign-up-text{
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 22px;
+    font-family: DM Sans;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.text{
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 22px; 
+    font-family: DM Sans;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Button-S{
+    position:absolute;
+    left:1170px;
+    top:666px;
+    color:white;
+    font-size:20px;
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    word-wrap:break-word;
+    background-color:#EE6010;padding:18px 55px;
+    border-radius:34.50px;
+    cursor:pointer;
+    border:none;
+}
+
+
+.heading{
+    width: 537px;
+    left: 521px;
+    top: 247px;
+    position: absolute;
+}
+
+.Lets{
+    color: #C45719;
+    font-size: 44px;
+    font-family: DM Sans;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.pick{
+    color: #C45719;
+    font-size: 44px;
+    font-family: DM Sans;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+.head{
+    color: #C45719;
+    font-size: 44px;
+    font-family: DM Sans;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.youleft{
+    color: rgba(255, 73.78, 34, 0.85);
+    font-size: 44px;
+    font-family: DM Sans;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.position{
+    left: 750px;
+    top: 716px;
+    position: absolute;
+}
+.or-text{
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 18px;
+    font-family: DM Sans;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.apple{
+    width: 85px;
+    height: 48px;
+    left: 720px;
+    top: 757px;
+    position: absolute;
+}
+.fb{
+    width: 73px;
+    height: 50px;
+    left: 662px;
+    top: 757px;
+    position: absolute;
+}
+.google{
+    width: 45px;
+    height: 45px;
+    left: 805px;
+    top: 757px;
+    position: absolute;
+    border: 1px solid transparent; 
+    transition: border-color 0.3s;
+}
+
+.pass-box-pos{
+    width: 318px; 
+    height: 46px; 
+    left: 595px; 
+    top: 515px; 
+    position: absolute;
+}
+
+.pass-box{
+    width: 318px; 
+    height: 46px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: rgba(217, 217, 217, 0.15); 
+    letter-spacing: 2px;
+    border-radius: 20px;
+    color:white;
+    font-family: DM Sans;
+    font-size: medium;
+    padding-left: 15px;
+    transition: border-color 0.3s;
+    outline:none;
+    border:black;
+}
+
+
+input::placeholder{
+    left: 13px; 
+    top: 7px; 
+    position: absolute; 
+    color: rgba(255, 255, 255, 0.25); 
+    font-size: 22px; 
+    font-family: Inter; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+input[type=email]:focus{
+    border: 1px solid #d0540e;
+}
+
+input[type=password]:focus{
+    border: 1px solid #d0540e;
+}
+
+.mail-box-pos{
+    width: 318px; 
+    height: 46px; 
+    left: 588px; 
+    top: 420px; 
+    position: absolute;
+}
+
+.mail-box{
+    width: 318px; 
+    height: 46px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    letter-spacing: 2px;
+    background: rgba(217, 217, 217, 0.15); 
+    border-radius: 20px;
+    color:white;
+    font-family: DM Sans;
+    font-size: medium;
+    padding-left: 15px;
+    outline:none;
+    transition: border-color 0.3s;
+    border:black;
+}
+
+.terms-pos{
+    left: 665px; 
+    top: 589px; 
+    position: absolute;
+}
+
+.text-one{
+    color: rgba(255, 255, 255, 0.80); 
+    font-size: 12px; 
+    font-family: DM Sans; 
+    font-weight: 500; 
+    word-wrap: break-word
+}
+
+.text-two{
+    color: #C45719; 
+    font-size: 12px; 
+    font-family: DM Sans; 
+    font-weight: 700; 
+    word-wrap: break-word
+}
+
+.text-three{
+    color: rgba(255, 255, 255, 0.80); 
+    font-size: 12px; 
+    font-family: DM Sans; 
+    font-weight: 500; 
+    word-wrap: break-word
+}
+
+.text-four{
+    color: #C45719; 
+    font-size: 12px; 
+    font-family: DM Sans; 
+    font-weight: 700; 
+    word-wrap: break-word
+}
+
+.terms-text{
+    left: 698px; 
+    top: 600px; 
+    position: absolute;
+}
+
+.email-label {
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-30px);
+    transition: transform 0.3s ease-in-out;
+}
+
