@@ -1,0 +1,53 @@
+#outer-div{
+    background-color: gray;
+    Position :relative;
+    width:100%;
+    height: 100vh;
+    backdrop-filter:blur 1.5px;
+    background-size: cover;
+    display:flex;
+    Justify-content: center;
+    align-items: center;
+    
+}
+#inner-div{
+    width: 670px;
+    height: 530px;
+    background-color: black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    
+}
+#container{
+     background-image: url(doggy.png);
+     Position :relative;
+     padding: 10px;
+     width: 100px
+     height: 0;
+     background-repeat: no-repeat;
+     display:flex;
+     Justify-content: center;
+     align-items: center;
+     
+}
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: gray;
+  }
+  .title{
+    color: orangered;
+    margin-left: 10rem;
+    padding-top: 10px;
+  }
+  input [type="submit"]{
+    background-color: orangered;
+    color: white;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+  }
