@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    width: 100%;
+}
+.sing-up{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-body{
+    height: 500px;
+    width: 700px;
+    border: 2px solid orangered;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* left */
+
+.left{
+    width: 60%;
+    height: 100%;
+    background-image: url(german.jpeg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.left>.top-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.left>p{
+    text-align: center;
+}
+.bottom-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bottom-text>.left-button{
+    padding: 10px 35px;
+    border-radius: 40px;
+    background-color: orangered;
+    color: white;
+    border-color: transparent;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+/* right */
+
+.right{
+    width: 40%;
+    height: 100%;
+    background-color: black;
+    border-radius: 0 20px 20px 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    gap: 10px;
+}
+
+.right>h1{
+    color: orangered;
+}
+
+.right>.form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.right>.form>.pass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    background-color: rgba(35, 35, 35, 0.851);
+    color: white;
+    border-radius: 20px;
+    border-color: transparent;
+    height: 30px;
+    width: 200px;
+}
+
+.right>.form>.pass>p{
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.right>.form>.terms{
+    font-size: 10px;
+    text-align: center;
+}
+.right>.form>p>a{
+    color: orangered;
+    text-decoration: none;
+}
+
+.right>.form>.right-button{
+    padding: 10px 35px;
+    border-radius: 40px;
+    background-color: orangered;
+    color: white;
+    border-color: transparent;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.right>.form>.logos{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.right>.form>.logos>img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
