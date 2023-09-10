@@ -5,8 +5,18 @@
     font-family:'DM Sans';
 }
 
-body{
-    background-color: black;
+body {
+    background-color: #2f2b2b;
+}
+
+.main{
+    background-color: #0e0b0b;
+    padding-bottom:18rem;
+    padding-top:2rem;
+    margin-right: 10rem;
+    margin-left:10rem;
+    margin-top :0rem;
+    margin-bottom:0rem;
 }
 
 .heading{
@@ -21,70 +31,169 @@ body{
 .heading h1{
     font-size:50px;
     color:white;
-    margin-bottom:25px;
+    margin-bottom:18px;
     position:relative;
 }
 
-.heading h1::after{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:4px;
-    display:block;
-    margin:1 auto;
-    background-color: orangered;
+.heading h1::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 4px;
+    display: block;
+    left: 35%; /* Adjust this value to center the line as needed */
+    background-color: #ee6010;
 }
+
 
 .heading p{
     font-size:18px;
     color:white;
     margin-bottom:35px;
+
 }
 
-.container{
-    width:90%;
-    margin:0 auto;
-    padding:10px 20px;
-}
 
 .about{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
+    margin:0 auto;
 }
 
 .about-photo{
-    flex:1;
-    margin-right:40px;
-    overflow:hidden;
+    margin-left:4rem;
+    flex:1
 }
 
 .about-photo img{
-    max-width:55%;
-    height:40%;
-    display:block;
-    transition: 0.5s ease; 
+    object-fit: cover;
 }
 
-.about-photo:hover img{
-    transform:scale(1.2);
-}
 .content{
     flex:1;
     color:white;
+    padding-right:10rem;
+    letter-spacing:0.1rem;
+    font-family:'DM Sans';
 }
 
+
+content p{
+    padding-left: 3rem;
+}
 .content h2{
-    font-size:23px;
-    margin-bottom:10px;
-    color:orangered;
+    font-size:42px;
+    margin-bottom:30px;
+    color:#ee5c0e;
+    margin-left:5rem;
 }
 
 .content p{
-    font-size:18px;
+    font-size:20px;
     line-height:1.5;
-    color:white
+    margin-top: 10px;
+    color:white;
+    text-align:left;
+    margin-left:5rem;
+}
+
+
+.team h1{
+    color:white;
+    text-align:center;
+    font-size:42;
+    letter-spacing:2px;
+    background-color:#0e0b0b ;
+    padding-bottom: 2rem;
+    padding-top:2rem;
+    margin-right: 10rem;
+    margin-left:10rem;
+    margin-top :0rem;
+    margin-bottom:0rem;
+}
+
+.cards {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #0e0b0b;
+    padding-bottom: 8rem;
+    padding-left: 5rem;
+    padding-right:4rem;
+    padding-top: 2rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+
+}
+
+.sec-line {
+    display: flex; 
+    padding-left: 15rem;
+}
+
+.card-content{
+    display: flex;object-fit: cover;
+}
+.card {
+    width: 400px;
+    height: 730px;
+    padding: 10px;
+    margin-left: 2rem; /* Adjust this value to reduce the space */
+    margin-right: 2rem; /* Adjust this value to reduce the space */
+    margin-bottom: 4.5rem;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #2f2b2b;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+    transition: all .3s ease-in-out;
+}
+
+
+.card:hover {
+    background-color:rgb(86, 80, 80);
+    /* box-shadow: 0px 5px 16px rgba(36, 32, 32, 0.25);  */
+    transform: translate3d(0px, -7px, 0px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.607);
+}
+
+
+.card img {
+    width: 380px; 
+    height: 450px; 
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card h3 {
+    text-align: center;
+    padding-left:0rem;
+    margin-top: 10px;
+    color:#ee5c0e;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.card:hover h3{
+    color:#FCC900;
+}
+
+.card p {
+    margin-top: 5px;
+    color: white;
+    padding-bottom: 55px;
+}
+
+.card:hover p {
+    color: aliceblue; /* White color for the <p> tag on hover */
 }
 
 @media screen and (max-width:768px){
@@ -102,7 +211,25 @@ body{
         padding:0px;
     }
     .about{
-        padding:20px;
+        padding:25px;
+        
+    }
+    .main{
         flex-direction: column;
+    }
+    .about-photo{
+        width:50%;
+        height:50%;
+        padding:0;
+    }
+
+    .content p{
+        margin-top:10px;
+        padding-left:6rem;
+    }
+
+    .content h2{
+        padding-left:7rem;
+        font-size:20px;
     }
 }

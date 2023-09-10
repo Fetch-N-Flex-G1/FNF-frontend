@@ -2,6 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:'DM Sans';
+    
 }
 html,body{
     height: 100%;
@@ -14,7 +16,7 @@ html,body{
     height: 100vh;
     width: 100vw;
     position: relative;
-    background-image: url(bg.png);
+    background-image: url(../../images/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -22,9 +24,8 @@ html,body{
     justify-content: center;
 }
 .main-body{
-    height: 500px;
-    width: 700px;
-    border: 2px solid orangered;
+    height: 35rem;
+    width: 52rem;
     border-radius: 20px;
     display: flex;
 }
@@ -32,9 +33,9 @@ html,body{
 /* left */
 
 .left{
-    width: 60%;
+    width: 70%;
     height: 100%;
-    background-image: url(german.jpeg);
+    background-image: url(../../images/signupp.png);
     background-position: center;
     background-size: cover;
     border-radius: 20px 0 0 20px;
@@ -42,25 +43,33 @@ html,body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    color: white;
 }
 .left>.top-text{
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;  
+    font-size:1.4rem;
+    color:white;
+    opacity:0.75;
 }
 .left>p{
     text-align: center;
+    font-size: 1.3rem;
+    color:white;
+    opacity:0.75;
 }
 .bottom-text{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color:white;
+    opacity:0.75;
+
 }
 .bottom-text>.left-button{
     padding: 10px 35px;
     border-radius: 40px;
-    background-color: orangered;
+    background-color: #ee6010;
     color: white;
     border-color: transparent;
     margin-top: 25px;
@@ -71,7 +80,7 @@ html,body{
 /* right */
 
 .right{
-    width: 40%;
+    width: 54%;
     height: 100%;
     background-color: black;
     border-radius: 0 20px 20px 0;
@@ -81,10 +90,12 @@ html,body{
     align-items: center;
     padding-top: 40px;
     gap: 10px;
+    border: #ee6010 2px solid;
 }
 
 .right>h1{
-    color: orangered;
+    color:#c45719;
+    padding-left: 9.8rem;
 }
 
 .right>.form{
@@ -99,15 +110,42 @@ html,body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 20;
 }
 
 input{
-    background-color: rgba(35, 35, 35, 0.851);
     color: white;
     border-radius: 20px;
     border-color: transparent;
-    height: 30px;
-    width: 200px;
+    height: 2rem;
+    width: 15rem;
+    background: #2d2a2a;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    color:white;
+    font-family: DM Sans;
+    font-size: medium;
+    padding-left: 15px;
+    transition: border-color 0.3s;
+    outline:none;
+    border:black;
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.25); 
+    font-size: 18px; 
+    font-family: Inter; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    cursor: all-scroll;
+}
+
+input[type=email]:focus{
+    border: 1px solid #d0540e;
+}
+
+input[type=password]:focus{
+    border: 1px solid #d0540e;
 }
 
 .right>.form>.pass>p{
@@ -117,18 +155,18 @@ input{
 }
 
 .right>.form>.terms{
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
 }
 .right>.form>p>a{
-    color: orangered;
+    color:#ee6010;
     text-decoration: none;
 }
 
 .right>.form>.right-button{
     padding: 10px 35px;
     border-radius: 40px;
-    background-color: orangered;
+    background-color: #ee6010;
     color: white;
     border-color: transparent;
     font-size: 15px;
