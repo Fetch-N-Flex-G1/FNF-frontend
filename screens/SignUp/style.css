@@ -82,7 +82,7 @@ html,body{
 .right{
     width: 58%;
     height: 100%;
-    background-color: black;
+    background-color: #0E0B0B;
     border-radius: 0 20px 20px 0;
     color: white;
     display: flex;
@@ -134,7 +134,6 @@ input{
 input::placeholder{
     color: rgba(255, 255, 255, 0.25); 
     font-size: 15px; 
-    font-family: Inter; 
     font-weight: 400; 
     word-wrap: break-word;
     cursor: all-scroll;
@@ -182,13 +181,20 @@ input[type=password]:focus{
 .right>.form>.logos .apple{
     width: 85px;
     height: 48px;
+    margin-left: 3rem;
 }
 .right>.form>.logos .fb{
-    width: 100px;
-    height: 55px;
-    padding-right: 1rem;
+    width: 73px;
+    height: 50px;
 }
 .right>.form>.logos .google{
     width: 45px;
     height: 45px;
+}
+.s-up{
+    font-weight: bolder;
+}
+
+.f-up{
+    font-weight: bolder;
 }
