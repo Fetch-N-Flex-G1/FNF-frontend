@@ -80,7 +80,7 @@ html,body{
 /* right */
 
 .right{
-    width: 54%;
+    width: 58%;
     height: 100%;
     background-color: black;
     border-radius: 0 20px 20px 0;
@@ -117,8 +117,8 @@ input{
     color: white;
     border-radius: 20px;
     border-color: transparent;
-    height: 2rem;
-    width: 15rem;
+    height: 2.8rem;
+    width: 18rem;
     background: #2d2a2a;
     letter-spacing: 2px;
     border-radius: 20px;
@@ -133,7 +133,7 @@ input{
 
 input::placeholder{
     color: rgba(255, 255, 255, 0.25); 
-    font-size: 18px; 
+    font-size: 15px; 
     font-family: Inter; 
     font-weight: 400; 
     word-wrap: break-word;
@@ -150,12 +150,13 @@ input[type=password]:focus{
 
 .right>.form>.pass>p{
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 5px;
+    padding-bottom: 0.5rem;
 }
 
 .right>.form>.terms{
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
 }
 .right>.form>p>a{
@@ -173,16 +174,21 @@ input[type=password]:focus{
     font-weight: 650;
 }
 
+
+
 .right>.form>.logos{
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 10px;
+    display:flex;
 }
-.right>.form>.logos>img{
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 50%;
+.right>.form>.logos .apple{
+    width: 85px;
+    height: 48px;
+}
+.right>.form>.logos .fb{
+    width: 100px;
+    height: 55px;
+    padding-right: 1rem;
+}
+.right>.form>.logos .google{
+    width: 45px;
+    height: 45px;
 }
