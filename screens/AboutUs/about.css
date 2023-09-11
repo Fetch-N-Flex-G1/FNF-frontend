@@ -50,11 +50,10 @@ body {
 }
 
 
-.heading p{
+.title{
     font-size:18px;
     color:white;
     margin-bottom:35px;
-
 }
 
 
@@ -82,21 +81,23 @@ body {
     font-family:'DM Sans';
 }
 
-.content h2{
+.heading h2{
     font-size:42px;
     margin-bottom:30px;
     color:#ee5c0e;
     margin-left:5rem;
+    text-align: left;
     
 }
 
-.content p{
-    font-size:20px;
+.lines{
+    font-size:22px;
     line-height:1.5;
     margin-top: 10px;
     color:white;
     margin-left:5rem;
     position:relative;
+    text-align: left;
 }
 
 .main-team{
