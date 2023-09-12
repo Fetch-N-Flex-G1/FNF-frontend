@@ -150,13 +150,13 @@ input[type=password]:focus{
 
 .right>.form>.pass>p{
     margin-left:1.5rem;
-    font-size: 10px;
+    font-size: 11px;
     margin-bottom: 5px;
     padding-bottom: 0.5rem;
 }
 
 .right>.form>.terms{
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
 }
 .right>.form>p>a{
