@@ -213,6 +213,45 @@ h1{
 
 }
 
+
+.Goals h1 {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.ourgoals {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.squircle {
+    width: 20rem;
+    height: 20rem;
+    background-color: #2f2b2a;
+    border-radius: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center text vertically */
+}
+
+.squircle p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;;
+    margin: 0; /* Remove margin to center text within the box */
+}
+
+
+.squircle:hover{
+    border: 2px solid #ee5c0e;
+}
+
 @media screen and (max-width:1080px){
     *{
         padding:0;
@@ -223,10 +262,15 @@ h1{
     }
     .heading h1{
         font-size:36px;
+        
     }
     .heading p{
         font-size:17px;
         margin-bottom:0px;
+    }
+
+    .heading h2{
+        margin-top:5rem;
     }
 
     .content p{
