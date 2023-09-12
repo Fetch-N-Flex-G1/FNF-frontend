@@ -85,7 +85,7 @@ input{
     height: 2.3rem;
     width: 16rem;
     background: #2d2a2a;
-    border-radius: 20px;
+    border-radius: 15px;
     color:white;
     font-family: DM Sans;
     font-size: 15px;
@@ -108,11 +108,13 @@ input::placeholder{
 input[type=email]:focus{
     color: white;
     border: 2px solid #d0540e;
+    background-color:#413e3e;
 }
 
 input[type=password]:focus{
     color:white;
     border: 2px solid #d0540e;
+    background-color:#413e3e; 
 }
 
 .left>.form>.pass>p{
@@ -185,8 +187,8 @@ input[type=password]:focus{
 
 
 .image-text-newhere{
-    text-align: center;
-    padding-top:9rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
     color: rgba(255, 255, 255, 0.69);
     font-size: 30px;
     font-family: DM Sans;
@@ -197,9 +199,7 @@ input[type=password]:focus{
 .sign-up{
     width: 292px; 
     height: 88px;
-    position: absolute;
     text-align: center;
-    padding-left: 5rem;
     padding-top: 4rem;
 }
 
@@ -208,7 +208,6 @@ input[type=password]:focus{
     font-size: 18px;
     font-family: DM Sans;
     font-weight: 700;
-    text-align: center;
     word-wrap: break-word
 }
 
@@ -228,5 +227,10 @@ input[type=password]:focus{
     border-color: transparent;
     font-size: 15px;
     font-weight: 650;
-    margin-top:5rem;
+    margin-top:3rem;
 }
+
+.buddy{
+    text-align: center;
+}
+

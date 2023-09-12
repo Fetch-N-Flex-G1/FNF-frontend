@@ -121,7 +121,7 @@ input{
     height: 2.3rem;
     width: 16rem;
     background: #2d2a2a;
-    border-radius: 20px;
+    border-radius: 15px;
     color:white;
     font-family: DM Sans;
     font-size: 15px;
@@ -142,10 +142,12 @@ input::placeholder{
 
 input[type=email]:focus{
     border: 2px solid #d0540e;
+    background-color:#413e3e;
 }
 
 input[type=password]:focus{
     border: 2px solid #d0540e;
+    background-color:#413e3e;
 }
 
 .right>.form>.pass>p{
