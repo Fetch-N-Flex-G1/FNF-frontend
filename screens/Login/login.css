@@ -51,7 +51,6 @@ html,body{
     font-size:2rem;
     text-align: left;
     margin-left: 2rem;
-    margin-bottom:0.5rem;
 }
 
 .youleft{
@@ -117,11 +116,8 @@ input[type=password]:focus{
     background-color:#413e3e; 
 }
 
-.left>.form>.pass>p{
-    text-align: center;
-    font-size: 12px;
-    margin-bottom: 5px;
-    padding-bottom: 0.5rem;
+.or{
+    font-size: 16px;
 }
 
 .left>.form>.terms{
@@ -143,22 +139,24 @@ input[type=password]:focus{
     font-weight: 650;
 }
 
-.left>.form>.logos{
-    display:flex;
+
+.left > .form > .logos .google {
+    width: 46px;
+    height: 47px;
+    margin-left: 3px;
 }
-.left>.form>.logos .apple{
+.left > .form > .logos .apple {
     width: 85px;
     height: 48px;
-    margin-left: 3rem;
 }
-.left>.form>.logos .fb{
-    width: 73px;
-    height: 50px;
+
+.left > .form > .logos .fb {
+    width: 79px;
+    height: 52px;
 }
-.left>.form>.logos .google{
-    width: 45px;
-    height: 45px;
-}
+
+
+
 
 
 /*right*/
@@ -193,7 +191,11 @@ input[type=password]:focus{
     font-size: 30px;
     font-family: DM Sans;
     font-weight: 700;
-    word-wrap: break-word
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .sign-up{
@@ -208,7 +210,7 @@ input[type=password]:focus{
     font-size: 18px;
     font-family: DM Sans;
     font-weight: 700;
-    word-wrap: break-word
+    word-wrap: break-word;
 }
 
 .text{

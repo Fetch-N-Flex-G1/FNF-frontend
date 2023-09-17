@@ -178,22 +178,21 @@ input[type=password]:focus{
 
 
 
-.right>.form>.logos{
-    display:flex;
+.right > .form > .logos .google {
+    width: 46px;
+    height: 47px;
+    margin-left: 3px;
 }
-.right>.form>.logos .apple{
+.right > .form > .logos .apple {
     width: 85px;
     height: 48px;
-    margin-left: 3rem;
 }
-.right>.form>.logos .fb{
-    width: 73px;
-    height: 50px;
+
+.right > .form > .logos .fb {
+    width: 79px;
+    height: 52px;
 }
-.right>.form>.logos .google{
-    width: 45px;
-    height: 45px;
-}
+
 .s-up{
     font-weight: bolder;
 }
