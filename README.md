@@ -1,4 +1,4 @@
 # FNF-frontend
-Front-end For fetch n flex
+Front-end For Fetch-N-Flex
 
 Made with HTML, CSS and JS.
