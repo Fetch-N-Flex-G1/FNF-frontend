@@ -61,7 +61,7 @@ html,body{
 
 .bottom>.right{
     width: calc(100% - 20%);
-    margin-top: 100px;
+    margin-top: 70px;
 }
 .bottom>.right>.right-top{
     display: flex;
@@ -69,11 +69,11 @@ html,body{
     gap: 20px;
 }
 .bottom>.right>.right-top>img{
-    width: 200px;
+    width: 250px;
 }
 .bottom>.right>.right-top>.right-top-right{
-    width: 500px;
-    height: 200px;
+    width: 550px;
+    height: 250px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
@@ -104,8 +104,8 @@ html,body{
     margin-top: 20px;
 }
 .bottom>.right>.right-middle>.box{
-    width: 350px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
@@ -118,8 +118,8 @@ html,body{
     margin-top: 20px;
 }
 .bottom>.right>.right-bottom>.box{
-    width: 350px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
