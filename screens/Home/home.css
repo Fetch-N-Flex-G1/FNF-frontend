@@ -61,7 +61,7 @@ html,body{
 
 .bottom>.right{
     width: calc(100% - 20%);
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .bottom>.right>.right-top{
     display: flex;
