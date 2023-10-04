@@ -21,7 +21,7 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 100px;
+    padding-left: 80px;
     padding-right: 20px;
     padding-top: 20px;
 
@@ -42,7 +42,7 @@ html,body{
     justify-content: center;
     flex-direction: column;
     padding-left: 40px;
-    font-size: 30px;
+    font-size: 20px;
 }
 .bottom>.navbar>a{
     text-decoration: none;
