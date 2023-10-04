@@ -229,10 +229,13 @@ input[type=password]:focus{
     border-color: transparent;
     font-size: 15px;
     font-weight: 650;
-    margin-top:3rem;
+    margin-top:4.2rem;
 }
 
 .buddy{
     text-align: center;
 }
 
+.sign-up{
+    padding-left: 50px;
+}
