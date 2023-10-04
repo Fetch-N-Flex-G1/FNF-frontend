@@ -61,7 +61,7 @@ html,body{
 
 .bottom>.right{
     width: calc(100% - 20%);
-    margin-top: 70px;
+    margin-top: 50px;
 }
 .bottom>.right>.right-top{
     display: flex;
@@ -69,10 +69,10 @@ html,body{
     gap: 20px;
 }
 .bottom>.right>.right-top>img{
-    width: 250px;
+    width: 300px;
 }
 .bottom>.right>.right-top>.right-top-right{
-    width: 550px;
+    width: 600px;
     height: 250px;
     background-color: #161111;
     border-radius: 20px;
@@ -90,12 +90,12 @@ html,body{
     align-items: center;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content>.link{
-    padding-top: 35px;
+    padding-top: 55px;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content>.link>a{
     text-decoration: none;
     color: #EA6D13;
-    font-size: 15px;
+    font-size: 20px;
 }
 .bottom>.right>.right-middle{
     display: flex;
@@ -104,12 +104,12 @@ html,body{
     margin-top: 20px;
 }
 .bottom>.right>.right-middle>.box{
-    width: 400px;
+    width: 450px;
     height: 250px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
-    font-size: 20px;
+    font-size: 25px;
 }
 .bottom>.right>.right-bottom{
     display: flex;
@@ -118,10 +118,10 @@ html,body{
     margin-top: 20px;
 }
 .bottom>.right>.right-bottom>.box{
-    width: 400px;
+    width: 450px;
     height: 250px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
-    font-size: 20px;
+    font-size: 25px;
 }
