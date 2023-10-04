@@ -69,20 +69,20 @@ html,body{
     gap: 20px;
 }
 .bottom>.right>.right-top>img{
-    width: 150px;
+    width: 200px;
 }
 .bottom>.right>.right-top>.right-top-right{
     width: 500px;
-    height: 150px;
+    height: 200px;
     background-color: #161111;
     border-radius: 20px;
-    padding: 15px;
+    padding: 20px;
 }
 .bottom>.right>.right-top>.right-top-right>.top-content{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content{
     display: flex;
@@ -90,7 +90,7 @@ html,body{
     align-items: center;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content>.link{
-    padding-top: 28px;
+    padding-top: 35px;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content>.link>a{
     text-decoration: none;
@@ -104,11 +104,12 @@ html,body{
     margin-top: 20px;
 }
 .bottom>.right>.right-middle>.box{
-    width: 325px;
-    height: 150px;
+    width: 350px;
+    height: 200px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
+    font-size: 20px;
 }
 .bottom>.right>.right-bottom{
     display: flex;
@@ -117,9 +118,10 @@ html,body{
     margin-top: 20px;
 }
 .bottom>.right>.right-bottom>.box{
-    width: 325px;
-    height: 150px;
+    width: 350px;
+    height: 200px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
+    font-size: 20px;
 }
