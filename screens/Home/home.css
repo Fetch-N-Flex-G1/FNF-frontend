@@ -109,7 +109,7 @@ html,body{
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
-    font-size: 25px;
+    font-size: 20px;
 }
 .bottom>.right>.right-bottom{
     display: flex;
@@ -123,5 +123,5 @@ html,body{
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
-    font-size: 25px;
+    font-size: 20px;
 }
