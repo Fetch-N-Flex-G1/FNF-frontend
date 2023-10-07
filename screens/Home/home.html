@@ -13,8 +13,72 @@
     <div class="main">
         <div class="top">
             <h1>Fetch N Flex</h1>
-            <img src="../../images/anirban.jpg" alt="">
+            <img src="../../images/anirban.jpg" alt="" onclick="showGreyBox()">
+            <div class="grey-box" id="greyBox">
+                <h2>Hi, Anirban!</h1>
+                <p class="e-mail">duttashaan102@gmail.com</p>
+            </div>
         </div>
+
+            <style>
+            .grey-box {
+            width: 25%;
+            height: 70%;
+            background-color:#211e1e;
+            position: absolute;
+            top: 0;
+            margin-left: 70%; 
+            margin-top: 5%; 
+            display: none;
+            border-radius: 50px;
+            border-color: #6b6969;
+            }
+
+            .grey-box.disabled {
+            pointer-events: none;
+            }
+
+            h2{
+                color: rgba(255, 255, 255, 0.80);
+                font-size: 2.5rem;
+                text-align:right;
+                padding-right:3rem;
+                padding-top:2rem;
+                font-family: DM Sans;
+                font-weight: 500;
+                word-wrap: break-word;
+            }
+
+            .e-mail{
+                color: rgba(255, 255, 255, 0.75);
+                font-size: 18px;
+                font-family: DM Sans;
+                font-weight: 500;
+                word-wrap: break-word;
+                text-align:right;
+                padding-right:3rem;
+                padding-top:0.2rem;
+            }
+            </style>
+
+            <script>
+            function showGreyBox() {
+            const redBoxElement = document.querySelector(".grey-box");
+            redBoxElement.style.display = "block";
+            }
+
+            const image = document.querySelector(".top img");
+            image.addEventListener("click", showGreyBox);
+
+            document.addEventListener("click", function(event) {
+            if (event.target !== document.querySelector(".top img") && event.target !== document.querySelector(".grey-box")) {
+                document.querySelector(".grey-box").style.display = "none";
+                document.querySelector(".grey-box").classList.add("disabled");
+            }
+            });
+            </script>
+
+
         <div class="bottom">
             <div class="navbar left">
                 <a href=""><i class="fa-solid fa-house"></i> Home</a>
