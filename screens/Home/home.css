@@ -125,3 +125,78 @@ html,body{
     padding: 20px;
     font-size: 20px;
 }
+
+/*box*/
+a {
+    text-decoration: none !important; 
+    color: inherit; 
+}
+
+.line{
+    width:75%;
+    border:1px solid #6b6969;
+    margin: 0 auto;
+}
+.link{
+    margin-top:1.2rem;
+    margin-bottom:1.2rem;
+    text-align:center;
+    color: rgba(255, 255, 255, 0.80);
+    font-size:18px;
+    text-decoration: none;
+}
+
+
+.grey-box {
+width: 21%;
+height: 54%;
+background-color:#211e1e;
+position: absolute;
+top: 0;
+margin-left: 72%; 
+margin-top: 5%; 
+display: none;
+border-radius: 30px;
+border:2px solid #6b6969;
+}
+
+.grey-box.disabled {
+pointer-events: none;
+}
+
+.username{
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 2.5rem;
+    text-align:right;
+    padding-right:3rem;
+    padding-top:2rem;
+    font-family: DM Sans;
+    font-weight: 500;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+}
+
+h5{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 18px;
+    font-family: DM Sans;
+    font-weight: 500;
+    word-wrap: break-word;
+    text-align:right;
+    padding-right:3rem;
+    padding-top:0.2rem;
+}
+
+.e-mail{
+    text-align:right;
+    margin-bottom:1.5rem;
+    font-size:1rem;
+}
+.log-out{
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-align:center;
+    margin-top:1rem;
+    margin-bottom:1rem;
+    color: rgba(255, 255, 255, 0.80);
+}
