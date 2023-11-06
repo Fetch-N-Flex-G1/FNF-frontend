@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'DM Sans';
+    
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    width: 100%;
+}
+.sign-up{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-image: url(../../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-body{
+    height: 35rem;
+    width: 52rem;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* left */
+
+.left{
+    width: 70%;
+    height: 100%;
+    background-image: url(../../images/signupp.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.left>.top-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    font-size:1.3rem;
+    color:white;
+    opacity:0.75;
+}
+.left>p{
+    text-align: center;
+    font-size: 1.2rem;
+    color:white;
+    opacity:0.75;
+}
+.bottom-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    opacity:0.75;
+
+}
+.bottom-text>.left-button{
+    padding: 10px 35px;
+    border-radius: 40px;
+    background-color: #ee6010;
+    color: white;
+    border-color: transparent;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+/* right */
+
+.right{
+    width: 58%;
+    height: 100%;
+    background-color: #0E0B0B;
+    border-radius: 0 20px 20px 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    gap: 10px;
+    border: #ee6010 2px solid;
+}
+
+.right>h1{
+    color:#c45719;
+    padding-left: 9.8rem;
+}
+
+.right> form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.right> form>.pass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+input{
+    color: white;
+    border-radius: 20px;
+    border-color: transparent;
+    height: 2.3rem;
+    width: 16rem;
+    background: #2d2a2a;
+    border-radius: 15px;
+    color:white;
+    font-family: DM Sans;
+    font-size: 15px;
+    margin-left:1.5rem ;
+    padding-left: 0.9rem;
+    transition: border-color 0.3s;
+    outline:none;
+    border:black;
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.25); 
+    font-size: 15px; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    cursor: all-scroll;
+}
+
+input[type=email]:focus{
+    border: 2px solid #d0540e;
+    background-color:#413e3e;
+}
+
+input[type=password]:focus{
+    border: 2px solid #d0540e;
+    background-color:#413e3e;
+}
+
+.right> form>.pass>p{
+    margin-left:1.5rem;
+    font-size: 11px;
+    margin-bottom: 5px;
+    padding-bottom: 0.5rem;
+}
+
+.right> form>.terms{
+    font-size: 13px;
+    text-align: center;
+}
+.right> form>p>a{
+    color:#ee6010;
+    text-decoration: none;
+}
+
+.right> form>.right-button{
+    padding: 10px 35px;
+    border-radius: 40px;
+    background-color: #ee6010;
+    color: white;
+    border-color: transparent;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+
+
+.right > form > .logos .google {
+    width: 46px;
+    height: 47px;
+    margin-left: 3px;
+}
+.right > form > .logos .apple {
+    width: 85px;
+    height: 48px;
+}
+
+.right > form > .logos .fb {
+    width: 79px;
+    height: 52px;
+}
+
+.s-up{
+    font-weight: bolder;
+}
+
+.f-up{
+    font-weight: bolder;
+}
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="sign-up">
+            <div class="main-body">
+                <div class="left">
+                    <div class="top-text">
+                        <h2>Bring Your Pet's Fitness</h2>
+                        <h2>Journey Today!</h2>
+                    </div>
+                    <p><span class="s-up">Sign up</span> and give your <span class="f-up">furry <br> friend </span>the healthy life that is <br> deserves!</p>
+                    <div class="bottom-text">
+                        <h2>Already have an account?</h2>
+                        <a href="../Login/login.html"<button class="left-button"> Log In</button></a>
+                    </div>
+                </div>
+                <div class="right">
+                    <h1>Sign Up</h1>
+                    <form action="./reg.jsp" method="post">
+                        <input type="email" name="remail" placeholder="enter e-mail">
+                        <div class="pass">
+                            <p>Use a strong password to prevent theft of data</p>
+                        <input type="password" name="rpass" placeholder="  enter password">
+                        </div>
+                        <input type="password" name="re-pass" placeholder="  re-enter password">
+                        <p class="terms">By Signing up, you are agreeing to our <br> <a href="../Terms/terms.html">Terms</a> and <a href="../Privacy/privacy.html">Privacy policy</a></p>
+                        <button class="right-button">Sign Up</button>
+                        <p>Or</p>
+
+                        <div class="logos">
+                            <img src="../../images/fb.png" class="fb">
+                            <img src="../../images/google.png" class="google">
+                            <img src="../../images/apple.png" class="apple">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
