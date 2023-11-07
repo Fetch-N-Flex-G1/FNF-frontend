@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    width: 100%;
+    overflow-x: hidden;
+}
+.page{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #0E0B0B;
+    padding: 2rem 5rem 2rem 8rem;
+    position: relative;
+    font-size: 1rem;
+}
+.top{
+    display: flex;
+    align-items: center;
+    gap: 30%;
+}
+.page>.top>h1{
+    color: #EE6010;
+    font-size: 2.2rem;
+}
+.pic{
+    position: relative;
+}
+.page>.top>.pic>img{
+    width: 7.2rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+.page>.top>.pic>button{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.page>.top>.pic>.icon{
+    color: white;
+    background-color: #0E0B0B;
+}
+.page>.middle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7rem;
+    margin-top: 2rem;
+    color: white;
+}
+.page>.middle>.f_name>:nth-child(1),.page>.middle>.l_name>:nth-child(1),.page>.bottom>.email>:nth-child(1),.page>.bottom>.phone>:nth-child(1),.page>.bottom>.address>:nth-child(1){
+    margin-bottom: 1rem;
+}
+.page>.middle>.f_name>:nth-child(2),.page>.middle>.l_name>:nth-child(2),.page>.bottom>.email>:nth-child(2),.page>.bottom>.phone>:nth-child(2),.page>.bottom>.address>:nth-child(2){
+    padding-bottom: .2rem;
+}
+
+.page>.bottom{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+    color: white;
+}
+.submit{
+    margin-top: 2rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background-color: #EE6010;
+    color: white;
+    border-color: transparent;
+    font-size: 1rem;
+}
+.dog{
+    width: 32rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+input, textarea{
+    border-radius: 20px;
+    background-color: #2d2d2d;
+    border-color: transparent;
+    padding: 2.5px 0 2.5px 10px;
+    
+}
+
+input:focus ,textarea:focus{
+    outline: none;
+    color: white;
+    border: 2.5px solid #EE6010;
+    transition: .1s ease-in-out;
+    font-size: 1rem;
+  }

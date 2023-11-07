@@ -1,0 +1,367 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:'DM Sans';
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #2f2b2b;
+}
+
+.main{
+    background-color: #0e0b0b;
+    padding-bottom:18rem;
+    padding-top:2rem;
+    margin-right: 10rem;
+    margin-left:10rem;
+    margin-top :0rem;
+    margin-bottom:0rem;
+}
+
+.heading{
+    width:90%;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align:center;
+    margin:20px auto;
+}
+
+.heading h1{
+    font-size:50px;
+    color:white;
+    margin-bottom:18px;
+    position:relative;
+}
+
+.heading h1::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 4px;
+    display: block;
+    left: 35%; /* Adjust this value to center the line as needed */
+    background-color: #ee6010;
+}
+
+
+.title{
+    font-size:18px;
+    color:white;
+    margin-bottom:35px;
+}
+
+
+.about{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:0 auto;
+}
+
+.about-photo{
+    margin-left:4rem;
+    flex:1
+}
+
+.about-photo img{
+    object-fit: cover;
+}
+
+.content{
+    flex:1;
+    color:white;
+    padding-right:10rem;
+    letter-spacing:0.1rem;
+    font-family:'DM Sans';
+}
+
+.heading h2{
+    font-size:42px;
+    margin-bottom:30px;
+    color:#ee5c0e;
+    margin-left:5rem;
+    text-align: left;
+    
+}
+
+.lines{
+    font-size:22px;
+    line-height:1.5;
+    margin-top: 10px;
+    color:white;
+    margin-left:5rem;
+    position:relative;
+    text-align: left;
+}
+
+.main-team{
+    padding: 0;
+    margin:0;
+}
+
+.main-team h1{
+    color:white;
+    text-align:center;
+    font-size:42;
+    letter-spacing:2px;
+    background-color:#0e0b0b ;
+    padding-bottom: 2rem;
+    padding-top:1rem;
+    margin-right: 10rem;
+    margin-left:10rem;
+    margin-top :0rem;
+    margin-bottom:0rem;
+}
+
+.cards {
+    justify-content: center;
+    flex-wrap: wrap;
+    display:flex;
+    background-color: #0e0b0b;
+    padding-bottom: 8rem;
+    padding-left: 5rem;
+    padding-right:4rem;
+    padding-top: 2rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+
+}
+
+.sec-line {
+    display: flex; 
+    padding-left: 15rem;
+}
+
+.card-content{
+    display: flex;object-fit: cover;
+}
+.card {
+    width: 310px;
+    height: 530px;
+    padding: 10px;
+    margin-bottom: 4.5rem;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #2f2b2b;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+    transition: all .3s ease-in-out;
+    margin-bottom: 20px;
+    margin-right:3rem;
+    margin-left:3rem;
+
+}
+
+
+.card:hover {
+    background-color:rgb(86, 80, 80);
+    /* box-shadow: 0px 5px 16px rgba(36, 32, 32, 0.25);  */
+    transform: translate3d(0px, -7px, 0px);
+    box-shadow: white;
+}
+
+
+.card img {
+    width: 280px; 
+    height: 350px; 
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card h3 {
+    text-align: center;
+    padding-left:0rem;
+    margin-top: 10px;
+    color:#ee5c0e;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.card:hover h3{
+    color:#FCC900;
+}
+
+.card p {
+    margin-top: 5px;
+    color: white;
+    padding-bottom: 55px;
+}
+
+.card:hover p {
+    color: aliceblue; /* White color for the <p> tag on hover */
+}
+
+h1{
+    text-align: center;
+    background-color: #0e0b0b;
+    color:white;
+    font-size: 36;
+
+}
+
+
+.Goals h1 {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.ourgoals {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.squircle {
+    width: 20rem;
+    height: 20rem;
+    background-color: #2f2b2a;
+    border-radius: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center text vertically */
+}
+
+.squircle p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;;
+    margin: 0; /* Remove margin to center text within the box */
+}
+
+
+.squircle:hover{
+    border: 2px solid #ee5c0e;
+}
+
+.img{
+    width:50px;
+    height:50px;
+}
+
+@media screen and (max-width:1080px){
+    *{
+        padding:0;
+        margin:0;
+    }
+    .heading{
+        padding:0px 20px;
+    }
+    .heading h1{
+        font-size:36px;
+        
+    }
+    .heading p{
+        font-size:17px;
+        margin-bottom:0px;
+    }
+
+    .heading h2{
+        margin-top:5rem;
+    }
+
+    .content p{
+        font-size:17px;
+        margin-bottom:0px;
+        padding:0;
+    }
+    .container{
+        padding:0px;
+    }
+    .about{
+        padding:25px;
+        
+    }
+    .main{
+        flex-direction: column;
+    }
+    .about-photo{
+        width:50%;
+        height:50%;
+        padding:0;
+    }
+    .card-content{
+        display:block;
+    }
+
+    .sec-line{
+        display:block;
+    }
+
+    .card {
+        width: 300px;
+        height: 475px;
+        padding: 10px;
+        margin-left: 2rem; /* Adjust this value to reduce the space */
+        margin-right: 3rem; /* Adjust this value to reduce the space */
+        margin-bottom: 4.5rem;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #2f2b2b;
+        box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.25);
+        transition: background-color 0.3s ease;
+        transition: all .3s ease-in-out;
+    }
+
+    .card img {
+        width: 270px; 
+        height: 325px; 
+        margin-bottom: 10px;
+        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    .card h3 {
+        text-align: center;
+        padding-left:0rem;
+        margin-top: 10px;
+        color:#ee5c0e;
+        font-weight: bolder;
+        font-size: 15px;
+    }
+    .content p{
+        margin-top:10px;
+        padding-left:6rem;
+    }
+    .card p {
+        margin-top: 5px;
+        color: white;
+        padding-bottom: 55px;
+        font-size:12px;
+    }
+
+    .content h2{
+        padding-left:7rem;
+        font-size:20px;
+        text-align: center;
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+    .card-content{
+        display:block;
+    }
+
+    .sec-line{
+        display:block;
+    }
+}
+}
+
