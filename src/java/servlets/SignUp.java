@@ -44,14 +44,10 @@ public class SignUp extends HttpServlet {
             SQLConnection obj = new SQLConnection();
             OracleConnection conn;
             conn = obj.connect();
-            try{
-                ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_creds(EMAIL, PASSWORD) values(?, ?)");
-                ops.setString(1, SEMAIL);
-                ops.setString(2, SPASS);
-            }
-            catch(SQLException sqlexcpt){
-                obj.createUserCreds();
-            }
+            obj.createUserCreds();
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_creds(EMAIL, PASSWORD) values(?, ?)");
+            ops.setString(1, SEMAIL);
+            ops.setString(2, SPASS);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h3>User registered successfully.</h3>");

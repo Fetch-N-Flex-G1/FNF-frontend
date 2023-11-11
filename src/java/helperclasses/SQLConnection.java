@@ -22,10 +22,16 @@ public class SQLConnection {
            
     }
     
-    public void createUserCreds() throws SQLException{
+    public void runQuery(String Query) throws SQLException{
             Statement statement = oconn.createStatement();
             statement.execute("create table user_creds(email varchar2(255), password varchar2(255))");
             
+    }
+    public void createUserCreds() throws SQLException{
+        runQuery("create table if not exists user_creds(email varchar2(255), password varchar2(255))");
+    }
+    public void createContacts() throws SQLException{
+        runQuery("create table if not exists contacts( NAME varchar2(100), PHONE NUMBER(20), EMAIL varchar2(100));");
     }
     public void quit() throws SQLException{
         oconn.close();
