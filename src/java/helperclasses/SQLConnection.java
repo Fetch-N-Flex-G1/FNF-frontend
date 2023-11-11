@@ -22,9 +22,9 @@ public class SQLConnection {
            
     }
     
-    public void runQuery(String Query) throws SQLException{
+    public void runQuery(String query) throws SQLException{
             Statement statement = oconn.createStatement();
-            statement.execute("create table user_creds(email varchar2(255), password varchar2(255))");
+            statement.execute(query);
             
     }
     public void createUserCreds() throws SQLException{
