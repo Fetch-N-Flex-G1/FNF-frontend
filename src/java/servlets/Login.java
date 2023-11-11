@@ -1,85 +1,147 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package servlets;
+/**package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ujucoco
- */
-public class Login extends HttpServlet {
+import helperclasses.SQLConnection;
+import oracle.jdbc.OracleConnection;
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet login</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet login at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+public class Login extends HttpServlet {
+    private static final String SELECT_QUERY = "SELECT EMAIL, PASSWORD FROM user_credentials WHERE EMAIL=? AND PASSWORD=?";
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+        String userEmail = request.getParameter("SEMAIL");
+        String userPassword = request.getParameter("SPASS");
+
+        try {
+            SQLConnection scon = new SQLConnection();
+            OracleConnection connection = scon.connect();
+            PreparedStatement preparedStatement;
+            preparedStatement = connection.prepareStatement(SELECT_QUERY);
+
+
+            preparedStatement.setString(1, userEmail);
+            preparedStatement.setString(2, userPassword);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                pw.println("<html><body>");
+                pw.println("<h3>Welcome User to our site</h3>");
+                RequestDispatcher rd1 = request.getRequestDispatcher("./index.html");
+                rd1.include(request, response);
+                pw.println("<form method=\"post\" action=\"login.html\">");
+                pw.println("<input type=\"submit\" name=\"logout\" " + "value=\"Logout\">");
+                pw.println("</form>");
+                pw.println("</body></html>");
+
+            } else {
+                pw.println("<html><body>");
+                pw.println("<center><h3>Invalid username/password. Enter Correct username/password</h3></center>");
+                RequestDispatcher rd2 = request.getRequestDispatcher("./login.html");
+                rd2.include(request, response);
+                pw.println("</body></html>");
+            }
+        } catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+    }
+}
+* */
+package servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Login extends HttpServlet {
+    private static final String SELECT_QUERY = "SELECT EMAIL, PASSWORD FROM user_creds WHERE EMAIL=? AND PASSWORD=?";//ekhane password tao kano fetch krchis?
+    //are fetch na bolchi where e kano deachis? 
+    //pass ta ke simply fetch kkre user er enter kra pass er sathe compare o toh krte paris tle bar bar db er sthe
+    //connect kre query run krte hbe na tle backend e chap porbe
+    //java te code likhte paris na?
+    //hell even better! password ta pass kre de login.jsp ke tale okhanei red kre bole debe je bhul ache
+    //nahole nije bol pass bhul hole ki kre janabi? 
+    //naa page ta change joe jacche je same page e tjakte hbe je
+    
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+        String userEmail = request.getParameter("SEMAIL");
+        String userPassword = request.getParameter("SPASS");
 
+        try (Connection connection = DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1522:free", "c##FANDf", "database");
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY)) {
+
+            preparedStatement.setString(1, userEmail);
+            preparedStatement.setString(2, userPassword);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                    // Redirect to home.html
+                    response.sendRedirect("../../../Fetch-N-Flex/Pages/home.html");
+
+                    pw.println("</body></html>");
+
+            } else {
+                pw.println("<html><body>");
+                pw.println("<center><h3>Invalid username/password. Enter Correct username/password</h3></center>");
+                RequestDispatcher rd2 = request.getRequestDispatcher("./login.html");
+                rd2.include(request, response);
+                pw.println("</body></html>");
+            }
+        } 
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+    }
 }

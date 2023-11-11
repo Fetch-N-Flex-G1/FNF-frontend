@@ -42,7 +42,7 @@ html,body{
 }
 
 
-/*left*/
+/left/
 
 .left{
     width: 70%;
@@ -170,7 +170,7 @@ input[type=password]:focus{
 
 
 
-/*right*/
+/right/
 
 .right{
     width: 50%;
@@ -259,9 +259,9 @@ input[type=password]:focus{
             <div class="main-body">
                 <div class="left">
                     <p>Let's <b>Pick Up From</b><br>Where <b class="youleft">You Left!</b></p>
-                    <form>
-                        <input type="email" id="email" name="email" placeholder="e-mail">
-                        <input type="password" id="pass" name="pass" placeholder="password">
+                    <form action="http://localhost:8080/Fetch-N-Flex/login" method="post">
+                        <input type="email" id="email" name="SEMAIL" placeholder="e-mail">
+                        <input type="password" id="pass" name="SPASS" placeholder="password">
 
                         <p class="terms">By logging in, you are agreeing to our <br> <a href="../Terms/terms.html">Terms</a> and <a href="../Privacy/privacy.html">Privacy policy</a></p>
                         <button class="left-button">Log In</button>

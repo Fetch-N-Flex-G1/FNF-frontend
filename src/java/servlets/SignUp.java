@@ -2,10 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -63,41 +61,6 @@ public class SignUp extends HttpServlet {
             
             conn.close();
             
-            // STEP 2: REGISTERING THE ORACLE DRIVER WITH THIS SERVLET
-//            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-//
-//            // STEPjdbc:oracle:thin:@localhost:1522:free [c##fandf on C##FANDF] 3: INSTANTIATING THE ORACLE CONNECTION OBJECT
-//            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:free", "c##fandf", "database");
-            
-//
-//            // STEP 4: INSTANTIATING THE ORACLE PREPARED STATEMENT OBJECT
-//            // oconn.prepareStatement("create table user_credentials(email varchar2(255), password varchar2(255)");
-//            //try{
-//                //System.out.println("Test output before insert");
-//                //ops = (OraclePreparedStatement) oconn.prepareStatement("INSERT INTO user_credentials(EMAIL, PASSWORD) values(?, ?)");
-//            //}
-//catch(Exceptjava.sql.SQLSyntaxErrorExceptionion sqlexcpt){
-//                System.out.println("Test output before creating table");
-//                Statement statement = oconn.createStatement();
-//                boolean execute = statement.execute("create table user_credentials(email varchar2(255), password varchar2(255));");
-//                System.out.println("Table created successfully");
-//            //}
-//
-//            // STEP 6: FILLING UP THE BLANK QUERY PARAMETERS (?)
-//            ops.setString(1, SEMAIL);
-//            ops.sejava.sql.SQLSyntaxErrorExceptionion sqlexcpttString(2, SPASS);
-//
-//            // STEP 7: EXECUTING THE QUERY
-//            int rowsInserted = ops.executeUpdate();
-//            if (rowsInserted > 0) {
-//                pw.println("<h3>User registered successfully.</h3>");
-//            } else {
-//                pw.println("<h3>Failed to register user.</h3>");
-//            }
-//
-//            // STEP 8: CLOSING THE ORACLE OBJECTS
-//            ops.close();
-//            oconn.close();
 //
         } catch (SQLException ex) {
             Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
