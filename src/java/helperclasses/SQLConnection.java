@@ -31,7 +31,7 @@ public class SQLConnection {
         runQuery("create table if not exists user_creds(email varchar2(255), password varchar2(255))");
     }
     public void createContacts() throws SQLException{
-        runQuery("create table if not exists contacts( NAME varchar2(100), PHONE_NUMBER number(20), EMAIL varchar2(100));");
+        runQuery("create table if not exists contacts(NAME varchar2(100), PHONE_NUMBER number(20), EMAIL varchar2(100))");
     }
     public void quit() throws SQLException{
         oconn.close();
