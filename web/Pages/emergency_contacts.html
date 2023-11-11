@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog's Background</title>
+    <script>
+        document.getElementById("deleteButton").addEventListener("click", function() {
+            document.getElementById("name").value = "";
+            document.getElementById("contactNumber").value = "";
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("imggg1/456.jpg");
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+            backdrop-filter: blur(2px); /* Adjust the blur intensity as needed */
+        }
+
+        .emergency-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(253, 252, 251, 0.305); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.137);
+            margin-top: 25vh;
+            margin-bottom: 18vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #010101da; /* Adjust the color as needed */
+        }
+
+        .group {
+            margin-bottom: 20px;
+            border-color: #1313133b;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #0e0000;
+        }
+
+        input {
+            width: 30rem;
+            padding: 8px;
+            background-color: rgba(10, 10, 10, 0.185);
+            border-radius: 18px;
+            margin-bottom: 10px;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            margin-left: 15px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 22px;
+            cursor: pointer;
+        }
+
+        button.delete {
+            background-color: #f44336; /* Red */
+        }
+    </style>
+</head>
+<body>
+<from action="" method="post">
+<div class="emergency-container">
+    <h1>Emergency Contact</h1>
+    <div class="group">
+        <label for="name">Name:</label>
+        <b><input type="text" id="name" name="name" placeholder="Enter your name"></b>
+    </div>
+
+    <div class="group">
+        <label for="contactNumber">Contact Number:</label>
+        <b><input type="number" id="contactNumber" name="contactNumber" placeholder="Enter your contact number"></b>
+        <label for="E-mail">Contact Number:</label>
+        <b><input type="email" id="Email" name="Email" placeholder="Enter your email id"></b>
+    </div>
+
+    <button id="addButton">ADD</button>  
+
+    <button id="deleteButton" class="delete">RESET</button>
+</div>
+</from>
+
+<script>
+    document.getElementById('deleteButton').addEventListener('click', function() {
+        document.getElementById('name').value = '';
+        document.getElementById('contactNumber').value = '';
+    });
+</script>
+
+</body>
+</html>
