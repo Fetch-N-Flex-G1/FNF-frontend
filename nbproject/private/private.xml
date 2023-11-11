@@ -4,8 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/SignUp.java</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/Pages/login.html</file>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/Pages/sign_up.html</file>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/Login.java</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/Pages/home.html</file>
         </group>
     </open-files>
 </project-private>
