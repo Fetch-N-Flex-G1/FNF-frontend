@@ -72,31 +72,32 @@
     </style>
 </head>
 <body>
-<from action="" method="post">
+<form action="http://localhost:8080/Fetch-N-Flex/EmergencyCon" method="post">
 <div class="emergency-container">
     <h1>Emergency Contact</h1>
     <div class="group">
         <label for="name">Name:</label>
-        <b><input type="text" id="name" name="name" placeholder="Enter your name"></b>
+        <b><input type="text" id="name" name="rname" placeholder="Enter your name"></b>
     </div>
 
     <div class="group">
         <label for="contactNumber">Contact Number:</label>
-        <b><input type="number" id="contactNumber" name="contactNumber" placeholder="Enter your contact number"></b>
-        <label for="E-mail">Contact Number:</label>
-        <b><input type="email" id="Email" name="Email" placeholder="Enter your email id"></b>
+        <b><input type="number" id="contactNumber" name="rnum" placeholder="Enter your contact number"></b>
+        <label for="E-mail">Email:</label>
+        <b><input type="email" id="Email" name="remail" placeholder="Enter your email id"></b>
     </div>
 
     <button id="addButton">ADD</button>  
 
     <button id="deleteButton" class="delete">RESET</button>
 </div>
-</from>
+</form>
 
 <script>
     document.getElementById('deleteButton').addEventListener('click', function() {
         document.getElementById('name').value = '';
         document.getElementById('contactNumber').value = '';
+        document.getElementById('Email').value = '';
     });
 </script>
 
