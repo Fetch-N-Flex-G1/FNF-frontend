@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Record Displayer</title>
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
-         <style>
+        <style>
             *{
                 font-family: 'DM Sans';
             }
@@ -26,6 +26,7 @@
                     border: 5px solid #ee6010;
                     border-collapse: collapse;
                     color:white;
+                    border-radius
                 }
                 th
                 {
@@ -109,7 +110,8 @@
                             }
                         %>
                         <td>
-                            <button>Edit</button><button>Delete</button>
+                            <button onclick="editRecord('<%=ors.getString(1)%>')">Edit</button>
+                            <button onclick="deleteRecord('<%=ors.getString(1)%>')">Delete</button>
                         </td>
                     </tr>
                 <%
