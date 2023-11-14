@@ -33,17 +33,18 @@
                     margin-top:10rem;
                     margin-left:40px;
                     color:white;
-                    font-size:30px;
+                    font-size:25px;
                 }
-                th
-                {
+                th {
                     padding: 10px;
                     border: 5px solid black;
-                    margin-bottom:30px;
-                    margin-top:20px;
+                    margin-bottom: 30px;
+                    margin-top: 20px;
                     border-collapse: collapse;
                     color: white;
+                    font-size: 4rem; /* Added font-size property */
                 }
+
                 button{
                     padding: 10px 35px;
                     border-radius: 40px;
@@ -57,7 +58,6 @@
                 body{
                     background-color: color;
                 }
-
             </style>
     </head>
     <%!
@@ -89,7 +89,8 @@
         }
     %>
     <body style="background-color: black">
-        <h1 style="text-align: center; color: #ee6010; font-size: 30px;">PERSONAL INFO</h1>
+        <p style="text-align: center; color: #ee6010; font-size: 40px; font-weight: bold; margin-top:5rem;
+">PERSONAL INFO</p>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
     <tbody>
