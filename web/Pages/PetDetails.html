@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pet Details</title>
+    <link rel="stylesheet" href="../Stylesheets/petdetails.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Pet Details</div>
+    <div class="content">
+      <form action="http://localhost:8080/Fetch-N-Flex/PetDetails",method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Pet's name</span>
+            <input type="text" id="pet_name" name="Pet_Name" placeholder="Enter your pet's name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Owner's Name</span>
+            <input type="text" id="owner_name" name="Owner_Name" placeholder="Enter pet owner's name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Weight(in KG)</span>
+            <input type="text" id="weight" name="Weight" placeholder="Enter pet's weight" required>
+          </div>
+          <div class="input-box">
+            <span class="Height">Height(in CM)</span>
+            <input type="text" id="Height" name="Height" placeholder="Enter pet's Height" required>
+          </div>
+          <div class="input-box">
+            <span class="breed">Address</span>
+            <input type="text" id="breed" name="Breed" placeholder="Enter your pet's breed" required>
+          </div>
+          <div class="input-box">
+            <span class="age">Age</span>
+            <input type="text" id="age" name="Age" placeholder="Enter your pet's age" required>
+          </div>
+        </div>
+        <div class="pet's gender-details">
+          <input type="radio" name="Gender" id="dot-1">
+          <input type="radio" name="Gender" id="dot-2">
+          <input type="radio" name="Gender" id="dot-3">
+          <span class="gender-title">Pet's Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

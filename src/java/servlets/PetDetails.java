@@ -16,7 +16,7 @@ import oracle.jdbc.OraclePreparedStatement;
 
 import helperclasses.SQLConnection;
 
-public class UserDetails extends HttpServlet {
+public class PetDetails extends HttpServlet {
     String SF_NAME, SL_NAME, SEMAIL, SPH_NO, SADDRESS, SGENDER;
 
     // STEP 1: DECLARING ORACLE OBJECTS
@@ -36,12 +36,13 @@ public class UserDetails extends HttpServlet {
         pw.println("</head>");
         pw.println("<body>");
         pw.println("<h1>Servlet Register</h1>");
-            SF_NAME = request.getParameter("f_name");
-            SL_NAME = request.getParameter("l_name");
-            SEMAIL = request.getParameter("email");
-            SPH_NO = request.getParameter("ph_no");
-            SADDRESS= request.getParameter("address");
-            SGENDER = request.getParameter("gender");
+        String P_NAME = request.getParameter("Pet_Name");
+        String O_NAME = request.getParameter("Owner_Name");
+        String PWEIGHT = request.getParameter("Weight");
+        String PHEIGHT = request.getParameter("Height");
+        String PBREED = request.getParameter("Breed");
+        String PAGE = request.getParameter("Age");
+        String PGENDER = request.getParameter("Gender");
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
 
@@ -49,14 +50,15 @@ public class UserDetails extends HttpServlet {
             SQLConnection obj = new SQLConnection();
             OracleConnection conn;
             conn = obj.connect();
-            obj.createUserDetails();
-            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_details (f_name,l_name,email,ph_no,address,gender) values(?,?,?,?,?,?)");
-            ops.setString(1,SF_NAME );
-            ops.setString(2,SL_NAME );
-            ops.setString(3, SEMAIL);
-            ops.setString(4, SPH_NO);
-            ops.setString(5, SADDRESS);
-            ops.setString(6, SGENDER);
+            obj.createPetDetails();
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender) values(?,?,?,?,?,?,?)");
+            ops.setString(1,P_NAME);
+            ops.setString(2,O_NAME);
+            ops.setString(3,PWEIGHT);
+            ops.setString(4,PHEIGHT);
+            ops.setString(5,PBREED);
+            ops.setString(6,PAGE);
+            ops.setString(7,PGENDER);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Details added successfully</h1>");
@@ -64,8 +66,6 @@ public class UserDetails extends HttpServlet {
                 pw.println("<div style=\"text-align: center;\">");
                 pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/PetDetails.html'\">Add your pet details</button>");
                 pw.println("</div>");
-
-
             } else {
                 pw.println("<h3>Failed to register user.</h3>");
             }

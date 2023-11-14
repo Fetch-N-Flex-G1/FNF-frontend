@@ -36,6 +36,10 @@ public class SQLConnection {
     public void createUserDetails() throws SQLException{
         runQuery("create table if not exists user_details(f_name varchar2(100), l_name varchar2(100), email varchar2(255), ph_no number(20),address varchar2(400), gender varchar2(30),FOREIGN KEY (email) REFERENCES user_creds(email))");
     }
+    public void createPetDetails() throws SQLException{
+        runQuery("create table if not exists pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20),Breed varchar2(400), Age number(30),Gender varchar2(30))");
+    }
+
 
     public void quit() throws SQLException{
         oconn.close();
