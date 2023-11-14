@@ -19,20 +19,24 @@ public class SQLConnection {
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
             oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:free", "c##fandf", "database");
             return oconn;
-           
     }
     
     public void runQuery(String query) throws SQLException{
             Statement statement = oconn.createStatement();
             statement.execute(query);
-            
     }
     public void createUserCreds() throws SQLException{
-        runQuery("create table if not exists user_creds(email varchar2(255), password varchar2(255))");
+        runQuery("create table if not exists user_creds(email varchar2(255) PRIMARY KEY, password varchar2(255))");
     }
+
     public void createContacts() throws SQLException{
         runQuery("create table if not exists contacts(NAME varchar2(100), PHONE_NUMBER number(20), EMAIL varchar2(100))");
     }
+    
+    public void createUserDetails() throws SQLException{
+        runQuery("create table if not exists user_details(f_name varchar2(100), l_name varchar2(100), email varchar2(255), ph_no number(20),address varchar2(400), gender varchar2(30),FOREIGN KEY (email) REFERENCES user_creds(email))");
+    }
+
     public void quit() throws SQLException{
         oconn.close();
     }

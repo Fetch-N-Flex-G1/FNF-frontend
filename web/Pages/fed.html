@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
     <link rel="stylesheet" href="../Stylesheets/fed.css">
     <script src="../JS/fed.js"></script>
@@ -12,89 +13,45 @@
   <body>
     <header class="blank"> </header>
     <h2> SHARE YOUR OPINIONS </h2>
-    <div class ="container">
+    <div class="container">
       <div class="item">
-        <div class ="content">
-            <img src="../images/Please take a moment to provide us with your feedback on your pet's fitness journey._20230911_214929_0000.png" alt="contact us" class="image">
+        <div class="content">
+          <img src="../images/Please take a moment to provide us with your feedback on your pet's fitness journey._20230911_214929_0000.png" alt="contact us" class="image">
         </div>
-        <div class ="right-side">
-          <div class="input-box">
-            <input type="text" id="Name" placeholder="Enter your name">
-          </div>
-          <div class="input-box">
-            <input type="email" id="Email" placeholder="Enter your email">
-          </div>
-          <div class="rate">
-            <input type="radio" id="star5" name="rate" value="5" />
-            <label for="star5" title="text">5 stars</label> 
-            <input type="radio" id="star4" name="rate" value="4" />
-            <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label for="star1" title="text">1 star</label>
-            </div>
-          <div class="input-box message-box">
-          <div class="input-box message-box">
-            <textarea name="message" id="message" placeholder="Enter your message"></textarea>
-          </div>
-          <div class="button">
-            <input type="button" value="Send" >
-          </div>
+        <div class="right-side">
+          <form action="http://localhost:8080/Fetch-N-Flex/Feedback" method="post">
+            <div class="input-box">
+              <input type="text" name="Name" placeholder="Enter your name">
+            </div>
+            <div class="input-box">
+              <input type="email" name="Email" placeholder="Enter your email">
+            </div>
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label for="star1" title="text">1 star</label>
+            </div>
+            <div class="input-box message-box">
+              <textarea name="message" placeholder="Enter your message"></textarea>
+            </div>
+            <div class="button">
+              <input type="submit" value="Send">
+            </div>
+          </form>
+        </div>
       </div>
-      
-      </div>
-    </div>
     </div>
 
     <br>
     <br>
-    <h3>YOUR VALUABLE OPINIONS...</h3><br>
-        <div class="slider-container">
-          <div class="left-arrow arrow">&lt;</div>
-          <div class="slider-text">
-              <p><b>Mala Bose</b>  ⭐⭐⭐⭐⭐
-                <br><br>
-                "This pet fitness tracker has been a game-changer for my dog's health. It's incredibly accurate, easy to use, and the app is fantastic. My pup's fitness has improved, and I couldn't be happier."</p>
-                <p><b>Kamalika Das</b> ⭐⭐⭐⭐⭐
-                  <br><br>
-                  "I can't recommend this tracker enough! It's helped me keep my pet active and healthy. The long battery life is a huge plus, and the data insights are invaluable."
-              </p>
-                <p><b>Sayak Roy</b> ⭐⭐⭐⭐⭐
-                  <br><br>
-                  "This tracker is worth every penny. It's waterproof, durable, and the GPS feature is so reassuring. My pet's activity levels have never been better, and I feel more connected to their health."
-              </p>
-              <p><b>Abhi Sen</b> ⭐⭐⭐⭐⭐
-                <br><br>
-                "The tracker made exercising with my dog a breeze. We set daily goals and reach them together. The app's interface is intuitive, and I love seeing our progress."
-              </p>
-              <p><b>Bishal Dutta</b> ⭐⭐⭐⭐⭐
-                <br><br>
-                "Our veterinarian recommended this tracker, and it's been a game-changer. We've seen a significant improvement in our pet's health, and the notifications for potential health issues are priceless."
-              </p>
-              <p><b>Sarnali Dey</b> ⭐⭐⭐⭐⭐
-                <br><br>
-                "This tracker has truly changed my pet's life for the better. It's not just a fitness tracker; it's a companion for their well-being. The daily activity reminders keep us both active and healthy."
-              </p>
-              <p><b>Sourav Ghosh</b>⭐⭐⭐⭐⭐
-                <br><br>
-                "I had a minor issue with the tracker setup, and the customer support team was outstanding. They quickly resolved my problem, and I'm grateful for their responsiveness. The tracker itself is top-notch!"
-              </p>
-              <p><b>Susmita Biswas</b> ⭐⭐⭐⭐⭐
-                <br><br>
-                "As a pet parent, I couldn't ask for more. The tracker keeps me informed about my pet's activities, and it's reassuring to know they're getting enough exercise. The GPS tracking feature is a bonus for peace of mind."
-              </p>
-              <p><b>Anu Das</b> ⭐⭐⭐⭐⭐
-                <br><br>
-                "I can always rely on this tracker to keep my pet active and healthy. It's also fun to challenge myself and my pet to reach new fitness goals together. I couldn't imagine life without it!"
-              </p>
-          </div>
-          <div class="right-arrow arrow">&gt;</div>
-      </div>
 
-      <br><br><br>
-    
   </body>
 </html>
+

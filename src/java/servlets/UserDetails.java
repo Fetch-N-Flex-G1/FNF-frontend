@@ -1,3 +1,4 @@
+
 package servlets;
 
 import java.io.IOException;
@@ -15,8 +16,8 @@ import oracle.jdbc.OraclePreparedStatement;
 
 import helperclasses.SQLConnection;
 
-public class SignUp extends HttpServlet {
-    String SEMAIL, SPASS;
+public class UserDetails extends HttpServlet {
+    String SF_NAME, SL_NAME, SEMAIL, SPH_NO, SADDRESS, SGENDER;
 
     // STEP 1: DECLARING ORACLE OBJECTS
   
@@ -35,26 +36,33 @@ public class SignUp extends HttpServlet {
         pw.println("</head>");
         pw.println("<body>");
         pw.println("<h1>Servlet Register</h1>");
-        SEMAIL = request.getParameter("remail");
-        SPASS = request.getParameter("rpass");
+            SF_NAME = request.getParameter("f_name");
+            SL_NAME = request.getParameter("l_name");
+            SEMAIL = request.getParameter("email");
+            SPH_NO = request.getParameter("ph_no");
+            SADDRESS= request.getParameter("address");
+            SGENDER = request.getParameter("gender");
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
 
         try { 
-       
             SQLConnection obj = new SQLConnection();
             OracleConnection conn;
             conn = obj.connect();
-            obj.createUserCreds();
-            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_creds(EMAIL, PASSWORD) values(?, ?)");
-            ops.setString(1, SEMAIL);
-            ops.setString(2, SPASS);
+            obj.createUserDetails();
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_details (f_name,l_name,email,ph_no,address,gender) values(?,?,?,?,?,?)");
+            ops.setString(1,SF_NAME );
+            ops.setString(2,SL_NAME );
+            ops.setString(3, SEMAIL);
+            ops.setString(4, SPH_NO);
+            ops.setString(5, SADDRESS);
+            ops.setString(6, SGENDER);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
-                pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">User registered successfully</h1>");
-                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please add more details to continue</p>");
+                pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Details added successfully</h1>");
+                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please add your pet details to continue</p>");
                 pw.println("<div style=\"text-align: center;\">");
-                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/user_details.html'\">Add your details</button>");
+                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/user_details.html'\">Add your pet details</button>");
                 pw.println("</div>");
 
 
@@ -120,3 +128,5 @@ public class SignUp extends HttpServlet {
     }// </editor-fold>
 
 }
+
+
