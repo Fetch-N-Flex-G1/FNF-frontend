@@ -28,16 +28,19 @@
                 table, tr, td
                 {
                     padding: 10px;
-                    margin: 0 auto;
-                    border: 5px solid #ee6010;
+                    border: 5px solid black;
                     border-collapse: collapse;
+                    margin-top:10rem;
+                    margin-left:40px;
                     color:white;
-                    border-radius;
+                    font-size:30px;
                 }
                 th
                 {
                     padding: 10px;
-                    border: 5px solid #ee6010;;
+                    border: 5px solid black;
+                    margin-bottom:30px;
+                    margin-top:20px;
                     border-collapse: collapse;
                     color: white;
                 }
@@ -89,63 +92,27 @@
         <h1 style="text-align: center; color: #ee6010; font-size: 30px;">PERSONAL INFO</h1>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
-            <thead>
-                <tr>
-                    <!-- STEP 9: BRINGING THE TABLE HEADINGS -->
-                    <%
-                        for (counter = 1; counter <= orsmd.getColumnCount(); counter++) {
-                    %>
-                        <th><%=orsmd.getColumnName(counter)%></th>
-                    <%
-                        }
-                    %>
-                    <th>ACTION</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- STEP 10: BRINGING ALL THE RECORDS AND DISPLAYING AS TABLE ROWS -->
+    <tbody>
+        <% while (ors.next()) { %>
+            <tr>
                 <%
-                    while (ors.next()) {
+                for (counter = 1; counter <= orsmd.getColumnCount(); counter++) {
+                    String columnName = orsmd.getColumnName(counter);
+                    String columnValue = ors.getString(counter);
                 %>
                     <tr>
-                        <%
-                            for (counter = 1; counter <= orsmd.getColumnCount(); counter++) {
-                        %>
-                            <td><%=ors.getString(counter)%></td>
-                        <%
-                            }
-                        %>
-                        <td>
-                            <button onclick="editRecord('<%=ors.getString(1)%>')">Edit</button>
-                            <button onclick="deleteRecord('<%=ors.getString(1)%>')">Delete</button>
-                        </td>
+                        <td><strong><%= columnName %>:</strong></td>
+                        <td><%= columnValue %></td>
                     </tr>
                 <%
-                    }
+                }
                 %>
-            </tbody>
-            <tfoot>
                 <tr>
-                    <th colspan="<%=orsmd.getColumnCount()%+1%>">&copy; FETCH-N-FLEX</th>
+                    <td colspan="2">
+                        <button onclick="editRecord('<%=ors.getString(1)%>')">Edit</button>
+                    </td>
                 </tr>
-            </tfoot>
-        </table>
-        <%
-            // STEP 11: CLOSING THE CONNECTIONS
-            try {
-                if (ors != null) {
-                    ors.close();
-                }
-                if (ops != null) {
-                    ops.close();
-                }
-                if (oconn != null) {
-                    oconn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        %>
-    </body>
-</html>
-
+            </tr>
+        <% } %>
+    </tbody>
+</table>

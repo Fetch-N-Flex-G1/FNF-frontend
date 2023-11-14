@@ -1,90 +1,102 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family:'DM Sans';
-}
-html,body{
-    height: 100%;
-    width: 100%;
-}
-.main{
-    width: 100%;
-    overflow-x: hidden;
-    
-}
-.page{
-    min-height: 100vh;
-    width: 100vw;
-    background-color: #0E0B0B;
-    padding: 2rem 5rem 2rem 8rem;
-    position: relative;
-    font-size: 1rem;
-}
-.top{
-    display: flex;
-    align-items: center;
-    gap: 30%;
-}
-.page>.top>h1{
-    color: #EE6010;
-    font-size: 2.2rem;
-    
-}
-.pic{
-    position: relative;
-}
-.page>.top>.pic>img{
-    width: 7.2rem;
-    border-radius: 50%;
-    margin-top: 1rem;
-}
-.page>.top>.pic>button{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-.page>.top>.pic>.icon{
-    color: white;
-    background-color: #0E0B0B;
-}
-.page>.middle{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 7rem;
-    margin-top: 2rem;
-    color: white;
-}
-.page>.middle>.f_name>:nth-child(1),.page>.middle>.l_name>:nth-child(1),.page>.bottom>.email>:nth-child(1),.page>.bottom>.phone>:nth-child(1),.page>.bottom>.address>:nth-child(1){
-    margin-bottom: 1rem;
-}
-.page>.middle>.f_name>:nth-child(2),.page>.middle>.l_name>:nth-child(2),.page>.bottom>.email>:nth-child(2),.page>.bottom>.phone>:nth-child(2),.page>.bottom>.address>:nth-child(2){
-    margin: 0 .5rem 0 .5rem;
-    border-bottom: .1rem solid white;
-    padding-bottom: .2rem;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-.page>.bottom{
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    margin-top: 2rem;
-    gap: 2rem;
-    color: white;
-}
-.edit{
-    margin-top: 2rem;
-    padding: .8rem 3rem;
-    border-radius: 5rem;
-    background-color: #EE6010;
-    color: white;
-    border-color: transparent;
-}
-.dog{
-    width: 32rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans';
+        }
 
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #0E0B0B;
+            padding: 2rem 5rem 2rem 8rem;
+            font-size: 1rem;
+            color: white;
+        }
+
+        h1 {
+            color: #EE6010;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .profile img {
+            width: 7.2rem;
+            border-radius: 50%;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details > div {
+            margin-bottom: 1rem;
+        }
+
+        .details label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .edit-btn {
+            margin-top: 2rem;
+            padding: 0.8rem 3rem;
+            border-radius: 5rem;
+            background-color: #EE6010;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Personal Profile</h1>
+    <div class="profile">
+        <div class="pic">
+            <img src="path/to/profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="details">
+            <div class="f_name">
+                <label>First Name:</label>
+                <span>Your First Name</span>
+            </div>
+            <div class="l_name">
+                <label>Last Name:</label>
+                <span>Your Last Name</span>
+            </div>
+            <div class="email">
+                <label>Email:</label>
+                <span>your.email@example.com</span>
+            </div>
+            <div class="phone">
+                <label>Phone:</label>
+                <span>+1234567890</span>
+            </div>
+            <div class="address">
+                <label>Address:</label>
+                <span>Your Address, City</span>
+            </div>
+        </div>
+    </div>
+    <button class="edit-btn">Edit Profile</button>
+</body>
+
+</html>
