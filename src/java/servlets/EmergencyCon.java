@@ -38,7 +38,8 @@ public class EmergencyCon extends HttpServlet {
         SNAME= request.getParameter("rname");
         SCONTACT=request.getParameter("rnum");
         SEMAIL = request.getParameter("remail");
-        pw.println("<h1>Printing the HTML Form values in this servlet....</h1>");
+        pw.println("<body style=\"background-color: #0E0B0B;\">");
+        pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">FETCH AND FLEX</h1>");
 
         try { 
        
@@ -52,8 +53,7 @@ public class EmergencyCon extends HttpServlet {
             ops.setString(3, SEMAIL);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
-                pw.println("<h3>The emergency request applied successfully.</h3>");
-            } else {
+                pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Contact Submitted!</h1>");            } else {
                 pw.println("<h3>Failed to add request.</h3>");
             }
             

@@ -115,7 +115,7 @@
     transition: all 0.3s ease;
     height: 40px;
     width:100px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'DM Sans';
   }
   .button input[type="button"]:hover{
     background: rgb(121, 33, 2);

@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Record Displayer</title>
+        <title>Emergency Contacts</title>
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
         <style>
             *{
@@ -26,7 +26,7 @@
                     border: 5px solid #ee6010;
                     border-collapse: collapse;
                     color:white;
-                    border-radius
+                    border-radius:2px;
                 }
                 th
                 {
@@ -80,7 +80,7 @@
         }
     %>
     <body style="background-color: black">
-        <h1 style="text-align: center; color: #ee6010; font-size: 30px;">Emergency Contacts</h1>
+        <h1 style="text-align: center; color: #ee6010; font-size: 30px; margin-top: 4rem;">Emergency Contacts</h1>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
             <thead>
