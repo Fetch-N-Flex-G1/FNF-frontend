@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans';
+    font-family: 'DM Sans';
   }
   
   body {
@@ -11,27 +11,15 @@
     background-color: #0E0B0B;
   }
 
-  .blank{
-    background-color:#3130309e;
-    height: 50px;
-  }
-
   h2{
     color:#fcfbfa;
     text-align: center;
-    font-family:"DM sans";
+    font-family:"Comfortaa";
     padding-top: 4rem;
+    font-size:2.5rem;
   }
 
-  h2::after {
-    content: "";
-    position: absolute;
-    width: 26%;
-    height: 2px;
-    display: block;
-    left: 37%;
-    background-color: #ee6010;
-}
+
   .container {
     position:relative;
     height:70vh;
@@ -113,10 +101,11 @@
     display: inline-block;
     margin-top: 12px;
   }
-  .right-side .button input[type="button"]{
+  .right-side .button input[type="submit"]{
     color: #fefcfc;
     font-size: 18px;
     outline: none;
+    margin-top:4rem;
     padding:18px 55px;
     border: none;
     padding: 8px 16px;

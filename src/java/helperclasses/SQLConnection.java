@@ -39,7 +39,14 @@ public class SQLConnection {
     public void createPetDetails() throws SQLException{
         runQuery("create table if not exists pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20),Breed varchar2(400), Age number(30),Gender varchar2(30))");
     }
+    
+    public void createFeedback() throws SQLException{
+        runQuery("create table if not exists feedback(NAME varchar2(200), EMAIL varchar2(200), FEEDBACK varchar2(1000))");
+    }
 
+    public void createGetInTouch() throws SQLException{
+        runQuery("create table if not exists GetInTouch(NAME varchar2(200), EMAIL varchar2(200), MESSAGE varchar2(1000))");
+    }
 
     public void quit() throws SQLException{
         oconn.close();
