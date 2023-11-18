@@ -76,11 +76,15 @@
             // STEP 5: INSTANTIATING THE CONNECTION
             oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:free", "c##fandf", "database");
             
-            // STEP 6: INSTANTIATING THE STATEMENT OBJECT
-            ops = (OraclePreparedStatement) oconn.prepareStatement("select * from user_details");
+            HttpSession userSession = request.getSession();
+            String loggedInEmail = (String) userSession.getAttribute("username");
             
-            // STEP 7: FILLING UP THE DATABASE RECORDS IN A TEMPORARY CONTAINER
+            // Execute SQL query
+            String query = "SELECT * FROM user_details WHERE EMAIL = ?";
+            ops = (OraclePreparedStatement) oconn.prepareStatement(query);
+            ops.setString(1, loggedInEmail);
             ors = (OracleResultSet) ops.executeQuery();
+            System.out.println(ors);
             
             // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
             orsmd = (OracleResultSetMetaData) ors.getMetaData();
