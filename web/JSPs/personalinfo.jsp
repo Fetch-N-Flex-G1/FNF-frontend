@@ -10,6 +10,7 @@
 <%@page import="oracle.jdbc.OracleResultSetMetaData"%>
 <%@page import="oracle.jdbc.OracleResultSet"%>
 <%@page import="oracle.jdbc.OracleConnection"%>
+<%@page import="helperclasses.SQLConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,12 +70,11 @@
         int counter;
     %>
     <%
-        try {
             // STEP 4: REGISTRATION OF ORACLE DRIVER
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+            SQLConnection sqlcon = new SQLConnection();
             
             // STEP 5: INSTANTIATING THE CONNECTION
-            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:free", "c##fandf", "database");
+            oconn = sqlcon.connect();
             
             HttpSession userSession = request.getSession();
             String loggedInEmail = (String) userSession.getAttribute("username");
@@ -88,9 +88,6 @@
             
             // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
             orsmd = (OracleResultSetMetaData) ors.getMetaData();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     %>
     <body style="background-color: black">
         <p style="text-align: center; color: #ee6010; font-size: 40px; font-weight: bold; margin-top:5rem;
