@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/Pages/user_details.html</file>
-            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
-            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/servlets/FeedbackForm.java</file>
-            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/servlets/ContactUs.java</file>
-            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/servlets/UserDetails.java</file>
+            <file>file:/C:/Users/Subhajit-PC/Desktop/FandF/Fetch-N-Flex/src/java/servlets/UserVerify.java</file>
+            <file>file:/C:/Users/Subhajit-PC/Desktop/FandF/Fetch-N-Flex/src/java/servlets/SendEmail.java</file>
+            <file>file:/C:/Users/Subhajit-PC/Desktop/FandF/Fetch-N-Flex/web/Pages/login.html</file>
+            <file>file:/C:/Users/Subhajit-PC/Desktop/FandF/Fetch-N-Flex/web/Pages/verification.html</file>
+            <file>file:/C:/Users/Subhajit-PC/Desktop/FandF/Fetch-N-Flex/src/java/servlets/User.java</file>
+            <file>file:/C:/Users/Subhajit-PC/Desktop/FandF/Fetch-N-Flex/src/java/servlets/VerifyCode.java</file>
         </group>
     </open-files>
 </project-private>
