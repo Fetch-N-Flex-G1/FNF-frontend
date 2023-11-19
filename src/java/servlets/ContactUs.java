@@ -47,7 +47,7 @@ public class ContactUs extends HttpServlet {
             OracleConnection conn;
             conn = obj.connect();
             obj.createGetInTouch();
-            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO GetInTouch (NAME,EMAIL,MESSAGE) values(?,?,?)");
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO get_in_touch (NAME,EMAIL,MESSAGE) values(?,?,?)");
             ops.setString(1, SNAME);
             ops.setString(2, SEMAIL);
             ops.setString(3, SMESSAGE);
