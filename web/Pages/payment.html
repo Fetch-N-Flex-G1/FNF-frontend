@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #191b1d;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+}
+section.pricing-section {
+    width: 100%;
+    height: 100vh;
+    
+    .pricing {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .pricing-header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ee6010;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 12px;
+            padding: 20px 70px;
+            border-radius: 0px 0px 8px 8px;
+            p {
+                font-weight: 300;
+            }
+            h3 {
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                column-gap: 5px;
+            }
+        }
+        .pricing-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 25px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .pricing-body-header {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                row-gap: 15px;
+                h2 {
+                    font-weight: 500;
+                    font-size: 50px;
+                }
+                .pricing-checkbox {
+                    display: flex;
+                    column-gap: 10px;
+                    align-items: center;
+                    span {
+                        font-size: 14px;
+                        color: #b5b6b8;
+                    }
+                    > div {
+                        width: 45px;
+                        background: #ee6010;
+                        height: 24px;
+                        border-radius: 15px;
+                        position: relative;
+                        cursor: pointer;
+                        div {
+                            position: absolute;
+                            width: 18px;
+                            height: 18px;
+                            background-color: #fff;
+                            top: 50%;
+                            left: 3px;
+                            transform: translateY(-50%);
+                            border-radius: 50%;
+                        }
+                        &.anually div {
+                            left: unset;
+                            right: 3px;
+                        }
+                    }
+                }
+            }
+            .pricing-body-plans {
+                > div {
+                    display: none;
+                    > div {
+                        display: flex;
+                        column-gap: 17px;
+
+                        .card {
+                            background-color: #22262c;
+                            padding: 25px;
+                            border-radius: 8px;
+                            width: 270px;
+                            position: relative;
+
+                            .card-header {
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 8px;
+                                justify-content: center;
+                                align-items: center;
+                                .card-title {
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                }
+                                .card-price {
+                                    font-size: 26px;
+                                }
+                                .card-users {
+                                    input {
+                                        width: 100%;
+                                        background: transparent;
+                                        border: 1px solid #35393e;
+                                        padding: 10px;
+                                        color: #b5b6b8;
+                                        text-align: center;
+                                        outline: none;
+                                    }
+                                    span {
+                                        font-size: 12px;
+                                        color: #ee6010;
+                                    }
+                                }
+                            }
+                            .card-body {
+                                margin-top: 30px;
+                                ul {
+                                    list-style-type: none;
+                                    margin-left: 20px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    row-gap: 8px;
+                                    li {
+                                        color: #b5b6b8;
+                                        position: relative;
+                                        font-size: 14px;
+                                    
+                                        &::before {
+                                            content: "•";
+                                            color: #ee6010;
+                                            font-weight: bold;
+                                            width: 20px;
+                                            margin-left: -18px;
+                                            font-size: 25px;
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                        }
+                                    }
+                                }
+                            }
+                            .card-footer {
+                                margin-top: 35px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                button {
+                                    border: 1px solid #ee6010;
+                                    background: transparent;
+                                    padding: 10px 25px;
+                                    color: #b5b6b8;
+                                    cursor: pointer;
+                                    &:hover {
+                                        background: #ee6010;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+
+                            &:nth-of-type(2) .card-footer button {
+                                background: #ee6010;
+                                color: #fff;
+                                &:hover {
+                                    background: transparent;
+                                    color: #b5b6b8;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    section.pricing-section {
+        width: 100%;
+        height: auto;
+        
+        .pricing {
+            .pricing-header {
+                width: 60%;
+                padding: 20px 50px;
+            }
+            .pricing-body {
+                margin-top: 780px;
+                padding-bottom: 50px;
+                .pricing-body-plans {
+                    > div {
+                        > div {
+                            flex-direction: column;
+                            row-gap: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    section.pricing-section {
+        .pricing {
+            .pricing-header {
+                width: 100%;
+                padding: 20px 50px;
+                position: unset;
+                top: unset;
+                left: unset;
+                transform: unset;
+                p {
+                    font-size: 14px;
+                }
+                h3 {
+                    font-size: 18px;
+                }
+            }
+            .pricing-body {
+                margin-top: 50px;
+                position: unset;
+                top: unset;
+                left: unset;
+                transform: unset;
+            }
+        }
+    }
+}
+    </style>
+
+</head>
+<body>
+    <section class="pricing-section">
+        <div class="pricing">
+            <div class="pricing-body">
+                <div class="pricing-body-header">
+                    <h2>Our Plans</h2>
+                </div>
+                <div class="pricing-body-plans">
+                    <div class="active" id="pricing_monthly_plan">
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="card-title">Starter</span>
+                                    <h2 class="card-price"> &#8377;200</h2>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Diet Chart</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Subscribe</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="card-title">Standard</span>
+                                    <h2 class="card-price">&#8377;1000</h2>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        
+                                        <li>Diet Chart</li>
+                                        <li>24/7 Technical Support</li>
+                                        
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Subscribe</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="card-title">Supreme</span>
+                                    <h2 class="card-price">&#8377;2000</h2>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        
+                                        <li>Diet Chart</li>
+                                        <li>24/7 Technical Support</li>
+                                        <li>Free Upgrade</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pricing_anually_plan">
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="card-title">Starter</span>
+                                    <h2 class="card-price">$19</h2>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>500 MAUs</li>
+                                        <li>3 projects</li>
+                                        <li>Unlimited guides</li>
+                                        <li>Unlimited flows</li>
+                                        <li>Unlimited branded themes</li>
+                                        <li>Email support</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Choose Plan</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="card-title">Pro</span>
+                                    <h2 class="card-price">$99<span>/month</span></h2>
+                                    <div class="card-users">
+                                        <input list="pro_userslimit" name="prousersinput" id="prousers_input">
+                                        <datalist id="pro_users_limit">
+                                            <option value="50 MAUs">
+                                            <option value="100 MAUs">
+                                            <option value="500 MAUs">
+                                            <option value="1000 MAUs">
+                                            <option value="2500 MAUs">
+                                        </datalist>
+                                        <span>Monthly active users</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>All starter features, plus:</li>
+                                        <li>Unlimited projects</li>
+                                        <li>Unlimited fully customizable themes</li>
+                                        <li>A dedicated Customer Success Manager</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Choose Plan</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="card-title">Enterprise</span>
+                                    <h2 class="card-price">Let's Talk!</h2>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>All Pro features</li>
+                                        <li>Unlimited MAUs</li>
+                                        <li>Dedicated environment</li>
+                                        <li>Enterprise account administration</li>
+                                        <li>Premium support and services</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const planBtn = document.getElementById("custom-checkbox");
+        const plans = document.querySelectorAll(".pricing-body-plans > div");
+
+        planBtn.addEventListener("click", function() {
+            this.classList.toggle("anually");
+            plans[0].classList.toggle("active");
+            plans[1].classList.toggle("active");
+        })
+    </script>
+</body>
+</html>

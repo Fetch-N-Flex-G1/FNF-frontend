@@ -178,6 +178,31 @@
             flex-direction: column;
           }
         }
+        .profile-image {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 4rem;
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      #profile-photo {
+        display: none;
+       
+      }
+      .blankspace{
+          width:100%;
+          height:100%;
+      }
      </style>
    </head>
 <body>
@@ -186,6 +211,11 @@
     <div class="content">
       <form action="http://localhost:8080/Fetch-N-Flex/user_de" method="post">
         <div class="user-details">
+       <label for="profile-photo" class="profile-image" style="cursor: pointer;">
+        <img id="selected-profile-photo" src="#" alt="Profile Photo">
+      </label>
+      <input type="file" id="profile-photo" accept="image/*" onchange="displaySelectedPhoto()" >
+      <div class="blankspace"></div>
           <div class="input-box">
             <span class="details">First Name</span>
             <input type="text" id="f_name" name="f_name" placeholder="Enter your name" required>
@@ -213,19 +243,19 @@
           <input type="radio" name="gender" id="dot-3">
           <span class="gender-title" >Gender</span>
           <div class="category">
-            <input type="radio" id="dot-1" name="gender">
+            <input type="radio" id="male" name="gender" value="Male">
             <label for="dot-1">
               <span class="dot one"></span>
               <span class="gender">Male</span>
             </label>
 
-            <input type="radio" id="dot-2" name="gender">
+            <input type="radio" id="female" name="gender" value="Female">
             <label for="dot-2">
               <span class="dot two"></span>
               <span class="gender">Female</span>
             </label>
 
-            <input type="radio" id="dot-3" name="gender">
+            <input type="radio" id="no_choice" name="gender" value="Prefer not to say">
             <label for="dot-3">
               <span class="dot three"></span>
               <span class="gender">Prefer not to say</span>
@@ -239,6 +269,18 @@
       </form>
     </div>
   </div>
+    <script>
+      function displaySelectedPhoto() {
+        const selectedPhotoInput = document.getElementById('profile-photo');
+        const selectedPhotoPreview = document.getElementById('selected-profile-photo');
 
+        const selectedPhoto = selectedPhotoInput.files[0];
+
+        if (selectedPhoto) {
+          const selectedPhotoURL = URL.createObjectURL(selectedPhoto);
+          selectedPhotoPreview.src = selectedPhotoURL;
+        }
+      }
+    </script>
 </body>
 </html>
