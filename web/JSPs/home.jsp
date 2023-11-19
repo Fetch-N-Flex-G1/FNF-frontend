@@ -3,12 +3,11 @@
     Created on : Nov 18, 2023, 7:17:15 PM
     Author     : ujucoco
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../Stylesheets/home.css">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/d752e27401.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d752e27401.js" crossorigin="anonymous"></script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
