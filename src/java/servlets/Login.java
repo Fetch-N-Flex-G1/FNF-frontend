@@ -64,11 +64,6 @@ public class Login extends HttpServlet {
                 preparedStatement.setString(1, userEmail);
                 preparedStatement.setString(2, userPassword);
                 ResultSet resultSet = preparedStatement.executeQuery();
-//                HttpSession user_details = request.getSession();
-//                String query = "SELECT * FROM user_details WHERE EMAIL = ?";
-//                ops = (OraclePreparedStatement) oconn.prepareStatement(query);
-//                ops.setString(1, userEmail);
-                
                 
                 if (resultSet.next()) {
                     // Store username in session
@@ -77,18 +72,6 @@ public class Login extends HttpServlet {
                     System.out.println(session);
                     System.out.printf("\u001B[34m%s\u001B[0m", userEmail);
                     setUserSessionInfo(userEmail,request);
-//                    System.out.println("Setting user session info");
-                    // Redirect to home.html
-//                    ors = (OracleResultSet) ops.executeQuery();
-//                    orsmd = (OracleResultSetMetaData) ors.getMetaData();
-//                    if (ors.next()) {
-//                        for (int counter = 1; counter < orsmd.getColumnCount(); counter++) {
-//                                        String column_name = orsmd.getColumnName(counter);
-//                                        String column_value = ors.getString(counter);
-//                                        user_details.setAttribute(column_name, column_value);
-//
-//                        }
-//                    }
                     response.sendRedirect("../../../Fetch-N-Flex/JSPs/home.jsp");
                     pw.println("</body></html>");
                     
@@ -114,9 +97,7 @@ public class Login extends HttpServlet {
             SQLConnection sqlcon = new SQLConnection();
             OracleConnection oconn = sqlcon.connect();
             
-            HttpSession user_details = request.getSession();
-//            String loggedInEmail = (String) userSession.getAttribute("username");
-            
+            HttpSession user_details = request.getSession();            
             // Execute SQL query
             String query = "SELECT * FROM user_details WHERE EMAIL = ?";
             ops = (OraclePreparedStatement) oconn.prepareStatement(query);
