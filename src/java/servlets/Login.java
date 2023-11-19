@@ -63,7 +63,7 @@ public class Login extends HttpServlet {
                 System.out.printf("\u001B[34m%s\u001B[0m", userEmail);
                 
                 // Redirect to home.html
-                response.sendRedirect("../../../Fetch-N-Flex/Pages/home.html");
+                response.sendRedirect("../../../Fetch-N-Flex/JSPs/home.jsp");
                 pw.println("</body></html>");
                 
             } else {
