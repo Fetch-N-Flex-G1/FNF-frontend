@@ -47,7 +47,7 @@ public class SQLConnection {
         runQuery("USER_DETAILS","create table user_details(f_name varchar2(100), l_name varchar2(100), email varchar2(255), ph_no number(20),address varchar2(400), gender varchar2(30),FOREIGN KEY (email) REFERENCES user_creds(email))");
     }
     public void createPetDetails() throws SQLException{
-        runQuery("PET_DETAILS", "CREATE TABLE pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20), Breed varchar2(400), Age number(30), Gender varchar2(30), DateOfBirth DATE, email varchar2(255), FOREIGN KEY(email) REFERENCES user_creds(email))");
+        runQuery("PET_DETAILS", "CREATE TABLE pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20), Breed varchar2(400), Age number(30), Gender varchar2(30), DateOfBirth DATE, owner_email varchar2(255), FOREIGN KEY(owner_email) REFERENCES user_creds(email))");
 
     }
     
