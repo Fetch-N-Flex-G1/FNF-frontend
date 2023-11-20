@@ -87,12 +87,8 @@
 </head>
 
 <body style="background-color: black">
-    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">Personal Info</p>
-    <div class="profile-image-container" onclick="document.getElementById('profileImageInput').click()">
-        <img src="../images/anirban.jpg" alt="Profile Image" id="profileImage">
-        <div class="edit-icon" title="Change Profile Photo" onclick="triggerFileInput()">&#9998;</div>
-    </div>
-    <input type="file" id="profileImageInput" accept="image/*" onchange="displayImage(this)">
+    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">PERSONAL INFORMATION</p>
+    
     <table>
         <tbody>
             <%  HttpSession userSession = request.getSession();
@@ -131,22 +127,6 @@
                 
         </tbody>
     </table>
-    <script>
-        function displayImage(input) {
-            const profileImageContainer = document.getElementById('profileImage');
-            const file = input.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    profileImageContainer.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function triggerFileInput() {
-            document.getElementById('profileImageInput').click();
-        }
-    </script>
+    <img src="../images/doggy.png" alt="Dog Image" style="position: fixed; bottom: 0; right: 0;">
 </body>
 </html>

@@ -25,7 +25,7 @@
                 {
                     padding: 10px;
                     margin: 0 auto;
-                    border: 5px solid #ee6010;
+                    border: 1px solid #ee6010;
                     border-collapse: collapse;
                     color:white;
                     border-radius:2px;
@@ -33,7 +33,7 @@
                 th
                 {
                     padding: 10px;
-                    border: 5px solid #ee6010;;
+                    border: 1px solid #ee6010;;
                     border-collapse: collapse;
                     color: white;
                 }
@@ -50,7 +50,10 @@
                 body{
                     background-color: color;
                 }
-
+                h1{
+                    font-size:5rem;
+                    font-family:Comfortaa;
+                }
             </style>
     </head>
     <%!

@@ -120,7 +120,7 @@
                 Set<String> keys = column_head.keySet();
                 System.out.println(column_head);
                 for (String key : keys)
-                {
+             {
                 %>
         <% while (ors.next()) { %>
             <tr>
@@ -144,5 +144,6 @@
             </tr>
         <% } %>
         <% } %>
+        <img src="../images/doggo.png" alt="Dog Image" style="position: fixed; bottom: 0; right: 0;">
     </tbody>
 </table>
