@@ -17,44 +17,67 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Emergency Contacts</title>
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
-        <style>
-            *{
-                font-family: 'DM Sans';
-            }
-                table, tr, td
-                {
-                    padding: 10px;
-                    margin: 0 auto;
-                    border: 1px solid #ee6010;
-                    border-collapse: collapse;
-                    color:white;
-                    border-radius:2px;
-                }
-                th
-                {
-                    padding: 10px;
-                    border: 1px solid #ee6010;;
-                    border-collapse: collapse;
-                    color: white;
-                }
-                button{
-                    padding: 10px 35px;
-                    border-radius: 40px;
-                    background-color: #ee6010;
-                    color: white;
-                    margin-right:10px;
-                    border-color: transparent;
-                    font-size: 15px;
-                    font-weight: 650;
-                }
-                body{
-                    background-color: color;
-                }
-                h1{
-                    font-size:5rem;
-                    font-family:Comfortaa;
-                }
-            </style>
+       <style>
+        * {
+            font-family: 'DM Sans';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: color; /* Replace 'color' with an actual color value */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-family: Comfortaa;
+            text-align: center;
+            color: #ee6010;
+            margin-top: 2rem;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 80%;
+            margin: auto;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        tr, td {
+            padding: 10px;
+            border: 1px solid #ee6010;
+            text-align: center;
+            color: white;
+        }
+
+        th {
+            padding: 10px;
+            border: 1px solid #ee6010;
+            color: white;
+            background-color: #ee6010;
+        }
+
+        button {
+            padding: 10px 35px;
+            border-radius: 40px;
+            background-color: #ee6010;
+            color: white;
+            margin-right: 10px;
+            border-color: transparent;
+            font-size: 15px;
+            font-weight: 650;
+        }
+    </style>
+
     </head>
     <%!
         // STEP 3: DECLARING OBJECTS AND VARIABLES
@@ -95,7 +118,6 @@
                     <%
                         }
                     %>
-                    <th>ACTION</th>
                 </tr>
             </thead>
             <tbody>
@@ -111,20 +133,11 @@
                         <%
                             }
                         %>
-                        <td>
-                            <button onclick="editRecord('<%=ors.getString(1)%>')">Edit</button>
-                            <button onclick="deleteRecord('<%=ors.getString(1)%>')">Delete</button>
-                        </td>
                     </tr>
                 <%
                     }
                 %>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="<%=orsmd.getColumnCount()%+1%>">&copy; FETCH-N-FLEX</th>
-                </tr>
-            </tfoot>
         </table>
         <%
             // STEP 11: CLOSING THE CONNECTIONS

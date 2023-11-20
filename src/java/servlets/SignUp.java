@@ -35,8 +35,10 @@ public class SignUp extends HttpServlet {
         pw.println("<body>");
         pw.println("<h1>Servlet Register</h1>");
         SEMAIL = request.getParameter("remail");
+        
         HttpSession session = request.getSession();
         session.setAttribute("credEmail",SEMAIL);
+        
         SPASS = request.getParameter("rpass");
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");

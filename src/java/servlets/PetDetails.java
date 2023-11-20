@@ -57,7 +57,7 @@ public class PetDetails extends HttpServlet {
             OracleConnection conn;
             conn = obj.connect();
             obj.createPetDetails();
-            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender,DateOfBirth,email) values(?,?,?,?,?,?,?, TO_DATE(?, 'YYYY-MM-DD'),?)");
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender,DateOfBirth,owner_email) values(?,?,?,?,?,?,?, TO_DATE(?, 'YYYY-MM-DD'),?)");
             ops.setString(1,P_NAME);
             ops.setString(2,O_NAME);
             ops.setString(3,PWEIGHT);
