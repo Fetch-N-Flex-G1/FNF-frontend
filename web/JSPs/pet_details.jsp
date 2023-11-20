@@ -6,6 +6,9 @@
 
 
 
+<%@page import="java.util.Set"%>
+<%@page import="java.util.LinkedHashMap"%>
+<%@page import="java.util.Map"%>
 <%-- 
     Document   : personalinfo
     Created on : Nov 14, 2023, 2:36:48 PM
@@ -40,10 +43,9 @@
                     padding: 10px;
                     border: 5px solid black;
                     border-collapse: collapse;
-                    margin-top:10rem;
-                    margin-left:40px;
                     color:white;
                     font-size:25px;
+                    margin: 0 auto;
                 }
                 th {
                     padding: 10px;
@@ -66,7 +68,10 @@
                     font-weight: 650;
                 }
                 body{
-                    background-color: color;
+                    background-color: black;
+                }
+                p{
+                   margin-bottom: 5rem; 
                 }
             </style>
     </head>
@@ -86,7 +91,7 @@
             oconn = sqlcon.connect();
             
             // STEP 6: INSTANTIATING THE STATEMENT OBJECT
-            ops = (OraclePreparedStatement) oconn.prepareStatement("select * from pet_details");
+            ops = (OraclePreparedStatement) oconn.prepareStatement("select Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender,DateOfBirth from pet_details");
             
             // STEP 7: FILLING UP THE DATABASE RECORDS IN A TEMPORARY CONTAINER
             ors = (OracleResultSet) ops.executeQuery();
@@ -95,11 +100,28 @@
             orsmd = (OracleResultSetMetaData) ors.getMetaData();
     %>
     <body style="background-color: black">
-        <p style="text-align: center; color: #ee6010; font-size: 40px; font-weight: bold; margin-top:5rem;
-">PET'S INFO</p>
+        <p style="text-align: center; color: #ee6010; font-size: 40px; font-weight: bold; margin-top:5rem; font-family: Comfortaa;
+            ">PET'S INFORMATION</p>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
     <tbody>
+        <%  HttpSession userSession = request.getSession();
+            
+                Map<String, String> column_head = new LinkedHashMap();
+                column_head.put("Pet_Name", "Pet Name");
+                column_head.put("Owner_Name", "Owner Name");
+                column_head.put("Weight", "Weight");
+                column_head.put("Height", "Height");
+                column_head.put("Breed", "Breed");
+                column_head.put("Age", "Age");
+                column_head.put("Gender", "Gender");
+                column_head.put("DateOfBirth", "Date Of Birth");
+                
+                Set<String> keys = column_head.keySet();
+                System.out.println(column_head);
+                for (String key : keys)
+                {
+                %>
         <% while (ors.next()) { %>
             <tr>
                 <%
@@ -120,6 +142,7 @@
                     </td>
                 </tr>
             </tr>
+        <% } %>
         <% } %>
     </tbody>
 </table>
