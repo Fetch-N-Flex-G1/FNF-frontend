@@ -61,10 +61,10 @@ public class PetDetails extends HttpServlet {
             ops.setString(7,PGENDER);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
-                pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Details added successfully</h1>");
-                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please add your pet details to continue</p>");
+                pw.println("<h1 style=\"color: white;text-align: center;font-size: 40px;font-family:DM Sans;\">Details added successfully</h1>");
+                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please Log In To Continue</p>");
                 pw.println("<div style=\"text-align: center;\">");
-                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/PetDetails.html'\">Add your pet details</button>");
+                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/login.html'\">Login</button>");
                 pw.println("</div>");
             } else {
                 pw.println("<h3>Failed to register user.</h3>");

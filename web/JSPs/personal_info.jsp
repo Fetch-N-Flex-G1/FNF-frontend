@@ -1,12 +1,6 @@
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="oracle.jdbc.OraclePreparedStatement"%>
-<%@page import="oracle.jdbc.OracleResultSetMetaData"%>
-<%@page import="oracle.jdbc.OracleResultSet"%>
-<%@page import="oracle.jdbc.OracleConnection"%>
-<%@page import="helperclasses.SQLConnection"%>
 <%@page import="java.util.Map"%>
-<%@page import="java.util.HashMap"%>
+<%@page import="java.util.LinkedHashMap"%>
+<%@page import="java.util.Set"%>
 <%@page import="javax.servlet.http.HttpSession"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -92,33 +86,6 @@
     </style>
 </head>
 
-<%
-    // STEP 3: DECLARING OBJECTS AND VARIABLES
-    OracleConnection oconn;
-    OraclePreparedStatement ops;
-    OracleResultSet ors;
-    OracleResultSetMetaData orsmd;
-    int counter;
-%>
-<%
-    // STEP 4: REGISTRATION OF ORACLE DRIVER
-    SQLConnection sqlcon = new SQLConnection();
-
-    // STEP 5: INSTANTIATING THE CONNECTION
-    oconn = sqlcon.connect();
-
-    HttpSession userSession = request.getSession();
-    String loggedInEmail = (String) userSession.getAttribute("username");
-
-    // Execute SQL query
-    String query = "SELECT * FROM user_details WHERE EMAIL = ?";
-    ops = (OraclePreparedStatement) oconn.prepareStatement(query);
-    ops.setString(1, loggedInEmail);
-    ors = (OracleResultSet) ops.executeQuery();
-
-    // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
-    orsmd = (OracleResultSetMetaData) ors.getMetaData();
-%>
 <body style="background-color: black">
     <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">Personal Info</p>
     <div class="profile-image-container" onclick="document.getElementById('profileImageInput').click()">
@@ -128,36 +95,40 @@
     <input type="file" id="profileImageInput" accept="image/*" onchange="displayImage(this)">
     <table>
         <tbody>
-            <% 
-                Map<String, String> column_head = new HashMap<>();
+            <%  HttpSession userSession = request.getSession();
+            
+                Map<String, String> column_head = new LinkedHashMap();
                 column_head.put("F_NAME", "First Name");
                 column_head.put("L_NAME", "Last Name");
                 column_head.put("EMAIL", "Email");
                 column_head.put("PH_NO", "Phone Number");
                 column_head.put("ADDRESS", "Address");
                 column_head.put("GENDER", "Gender");
-
-                while (ors.next()) { %>
+                
+                Set<String> keys = column_head.keySet();
+                System.out.println(column_head);
+                for (String key : keys)
+                {
+                %>
                     <tr>
                         <%
-                        for (counter = 1; counter <= orsmd.getColumnCount(); counter++) {
-                            String columnName = column_head.get(orsmd.getColumnName(counter));
-                            String columnValue = ors.getString(counter);
+                            String columnValue = (String) session.getAttribute(key);
                         %>
                             <tr>
-                                <td><strong><%= columnName %> :</strong></td>
+                                <td><strong><%= column_head.get(key) %> :</strong></td>
                                 <td><%= columnValue %></td>
                             </tr>
                         <%
-                        }
+//                        }
                         %>
-                        <tr>
-                            <td colspan="2">
-                                <button onclick="editRecord('<%=ors.getString(1)%>')">Edit</button>
-                            </td>
-                        </tr>
+                        
                     </tr>
                 <% } %>
+                <<tr><td colspan="2">
+                                <button>Edit</button>
+                            </td></tr>
+                
+                
         </tbody>
     </table>
     <script>
