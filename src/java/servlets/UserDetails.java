@@ -15,6 +15,7 @@ import oracle.jdbc.OracleConnection;
 import oracle.jdbc.OraclePreparedStatement;
 
 import helperclasses.SQLConnection;
+import javax.servlet.http.HttpSession;
 
 public class UserDetails extends HttpServlet {
     String SF_NAME, SL_NAME, SEMAIL, SPH_NO, SADDRESS, SGENDER;
@@ -28,6 +29,10 @@ public class UserDetails extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter pw = response.getWriter();
+        
+        HttpSession session = request.getSession();
+        String userEmail = (String) session.getAttribute("credEmail");
+
 
         pw.println("<!DOCTYPE html>");
         pw.println("<html>");
@@ -38,13 +43,14 @@ public class UserDetails extends HttpServlet {
         pw.println("<h1>Servlet Register</h1>");
             SF_NAME = request.getParameter("f_name");
             SL_NAME = request.getParameter("l_name");
-            SEMAIL = request.getParameter("email");
             SPH_NO = request.getParameter("ph_no");
             SADDRESS= request.getParameter("address");
             SGENDER = request.getParameter("gender");
+            SEMAIL= userEmail;
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
-
+        
+         
         try { 
             SQLConnection obj = new SQLConnection();
             OracleConnection conn;
@@ -53,10 +59,12 @@ public class UserDetails extends HttpServlet {
             ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_details (f_name,l_name,email,ph_no,address,gender) values(?,?,?,?,?,?)");
             ops.setString(1,SF_NAME );
             ops.setString(2,SL_NAME );
-            ops.setString(3, SEMAIL);
+            ops.setString(3,SEMAIL);
             ops.setString(4, SPH_NO);
             ops.setString(5, SADDRESS);
             ops.setString(6, SGENDER);
+ 
+            System.out.println(SEMAIL);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Details added successfully</h1>");

@@ -15,9 +15,9 @@ import oracle.jdbc.OracleConnection;
 import oracle.jdbc.OraclePreparedStatement;
 
 import helperclasses.SQLConnection;
+import javax.servlet.http.HttpSession;
 
 public class PetDetails extends HttpServlet {
-    String SF_NAME, SL_NAME, SEMAIL, SPH_NO, SADDRESS, SGENDER;
 
     // STEP 1: DECLARING ORACLE OBJECTS
   
@@ -28,6 +28,8 @@ public class PetDetails extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter pw = response.getWriter();
+        HttpSession session = request.getSession();
+        String userEmail = (String) session.getAttribute("credEmail");
 
         pw.println("<!DOCTYPE html>");
         pw.println("<html>");
@@ -42,16 +44,20 @@ public class PetDetails extends HttpServlet {
         String PHEIGHT = request.getParameter("Height");
         String PBREED = request.getParameter("Breed");
         String PAGE = request.getParameter("Age");
-        String PGENDER = request.getParameter("Gender");
+        String PGENDER = request.getParameter("gender");
+        String PDATE = request.getParameter("date");
+        String PEMAIL = userEmail;
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
+        
+        
 
         try { 
             SQLConnection obj = new SQLConnection();
             OracleConnection conn;
             conn = obj.connect();
             obj.createPetDetails();
-            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender) values(?,?,?,?,?,?,?)");
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender,DateOfBirth,email) values(?,?,?,?,?,?,?, TO_DATE(?, 'YYYY-MM-DD'),?)");
             ops.setString(1,P_NAME);
             ops.setString(2,O_NAME);
             ops.setString(3,PWEIGHT);
@@ -59,6 +65,9 @@ public class PetDetails extends HttpServlet {
             ops.setString(5,PBREED);
             ops.setString(6,PAGE);
             ops.setString(7,PGENDER);
+            ops.setString(8,PDATE);
+            ops.setString(9,PEMAIL);
+            
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 40px;font-family:DM Sans;\">Details added successfully</h1>");
