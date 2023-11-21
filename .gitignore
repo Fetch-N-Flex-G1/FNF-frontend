@@ -3,3 +3,4 @@ build/
 build/web/
 .vscode/
 .idea/
+web/WEB-INF/db.properties
