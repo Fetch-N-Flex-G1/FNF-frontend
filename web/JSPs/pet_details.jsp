@@ -22,7 +22,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Personal Info</title>
+    <title>Pet Info</title>
     <style>
         * {
             font-family: 'DM Sans';
@@ -98,7 +98,7 @@
 </head>
 
 <body style="background-color: black">
-    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">Your Pet</p>
+    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">PET INFORMATION</p>
     
     <table>
         <tbody>
