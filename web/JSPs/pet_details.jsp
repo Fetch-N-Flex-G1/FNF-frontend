@@ -1,28 +1,7 @@
-<%-- 
-    Document   : PetDetails
-    Created on : Nov 14, 2023, 8:46:25 PM
-    Author     : baishali
---%>
-
-
-
-<%@page import="java.util.Set"%>
-<%@page import="java.util.LinkedHashMap"%>
 <%@page import="java.util.Map"%>
-<%-- 
-    Document   : personalinfo
-    Created on : Nov 14, 2023, 2:36:48 PM
-    Author     : baishali
---%>
-
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="oracle.jdbc.OraclePreparedStatement"%>
-<%@page import="oracle.jdbc.OracleResultSetMetaData"%>
-<%@page import="oracle.jdbc.OracleResultSet"%>
-<%@page import="oracle.jdbc.OracleConnection"%>
-<%@page import="helperclasses.SQLConnection" %>
-
+<%@page import="java.util.LinkedHashMap"%>
+<%@page import="java.util.Set"%>
+<%@page import="javax.servlet.http.HttpSession"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,120 +9,125 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pet's Info</title>
-        <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
-        <style>
-            *{
-                font-family: 'DM Sans';
-            }
-                table, tr, td
-                {
-                    padding: 10px;
-                    border: 5px solid black;
-                    border-collapse: collapse;
-                    color:white;
-                    font-size:25px;
-                    margin: 0 auto;
-                }
-                th {
-                    padding: 10px;
-                    border: 5px solid black;
-                    margin-bottom: 30px;
-                    margin-top: 20px;
-                    border-collapse: collapse;
-                    color: white;
-                    font-size: 4rem; /* Added font-size property */
-                }
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Personal Info</title>
+    <style>
+        * {
+            font-family: 'DM Sans';
+        }
 
-                button{
-                    padding: 10px 35px;
-                    border-radius: 40px;
-                    background-color: #ee6010;
-                    color: white;
-                    margin-right:10px;
-                    border-color: transparent;
-                    font-size: 15px;
-                    font-weight: 650;
-                }
-                body{
-                    background-color: black;
-                }
-                p{
-                   margin-bottom: 5rem; 
-                }
-            </style>
-    </head>
-    <%!
-        // STEP 3: DECLARING OBJECTS AND VARIABLES
-        OracleConnection oconn;
-        OraclePreparedStatement ops;
-        OracleResultSet ors;
-        OracleResultSetMetaData orsmd;
-        int counter;
-    %>
-    <%
-            // STEP 4: REGISTRATION OF ORACLE DRIVER
-            SQLConnection sqlcon = new SQLConnection();
-            
-            // STEP 5: INSTANTIATING THE CONNECTION
-            oconn = sqlcon.connect();
-            
-            // STEP 6: INSTANTIATING THE STATEMENT OBJECT
-            ops = (OraclePreparedStatement) oconn.prepareStatement("select Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender,DateOfBirth from pet_details");
-            
-            // STEP 7: FILLING UP THE DATABASE RECORDS IN A TEMPORARY CONTAINER
-            ors = (OracleResultSet) ops.executeQuery();
-            
-            // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
-            orsmd = (OracleResultSetMetaData) ors.getMetaData();
-    %>
-    <body style="background-color: black">
-        <p style="text-align: center; color: #ee6010; font-size: 40px; font-weight: bold; margin-top:5rem; font-family: Comfortaa;
-            ">PET'S INFORMATION</p>
-        <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
-        <table>
-    <tbody>
-        <%  HttpSession userSession = request.getSession();
+        table, tr, td {
+            padding: 10px;
+            border: 5px solid black;
+            border-collapse: collapse;
+            color: white;
+            font-size: 25px;
+            margin: 0 auto;
+        }
+
+        th {
+            padding: 10px;
+            border: 5px solid black;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            border-collapse: collapse;
+            color: white;
+            font-size: 4rem;
+        }
+
+        button {
+            padding: 10px 35px;
+            border-radius: 40px;
+            background-color: #ee6010;
+            color: white;
+            margin-right: 10px;
+            border-color: transparent;
+            font-size: 15px;
+            font-weight: 650;
+        }
+
+        body {
+            background-color: color;
+        }
+
+        p {
+            margin-bottom: 6rem;
+        }
+
+        .profile-image-container {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edit-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: black">
+    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">Your Pet</p>
+    
+    <table>
+        <tbody>
+            <%  HttpSession userSession = request.getSession();
             
                 Map<String, String> column_head = new LinkedHashMap();
-                column_head.put("Pet_Name", "Pet Name");
-                column_head.put("Owner_Name", "Owner Name");
-                column_head.put("Weight", "Weight");
-                column_head.put("Height", "Height");
-                column_head.put("Breed", "Breed");
-                column_head.put("Age", "Age");
-                column_head.put("Gender", "Gender");
-                column_head.put("DateOfBirth", "Date Of Birth");
+                column_head.put("PET_NAME", "Name");
+                column_head.put("OWNER_NAME", "Owner");
+                column_head.put("WEIGHT", "Weight");
+                column_head.put("BREED", "Breed");
+                column_head.put("GENDER", "Gender");
+                column_head.put("AGE", "Age");
+                column_head.put("DATEOFBIRTH", "Date of Birth");
                 
                 Set<String> keys = column_head.keySet();
                 System.out.println(column_head);
                 for (String key : keys)
-             {
-                %>
-        <% while (ors.next()) { %>
-            <tr>
-                <%
-                for (counter = 1; counter <= orsmd.getColumnCount(); counter++) {
-                    String columnName = orsmd.getColumnName(counter);
-                    String columnValue = ors.getString(counter);
+                {
                 %>
                     <tr>
-                        <td><strong><%= columnName %>:</strong></td>
-                        <td><%= columnValue %></td>
+                        <%
+                            String columnValue = (String) session.getAttribute(key);
+                        %>
+                            <tr>
+                                <td><strong><%= column_head.get(key) %> :</strong></td>
+                                <td><%= columnValue %></td>
+                            </tr>
+                        <%
+//                        }
+                        %>
+                        
                     </tr>
-                <%
-                }
-                %>
-                <tr>
-                    <td colspan="2">
-                        <button onclick="editRecord('<%=ors.getString(1)%>')">Edit</button>
-                    </td>
-                </tr>
-            </tr>
-        <% } %>
-        <% } %>
-        <img src="../images/doggo.png" alt="Dog Image" style="position: fixed; bottom: 0; right: 0;">
-    </tbody>
-</table>
+                <% } %>
+                <<tr><td colspan="2">
+                                <button>Edit</button>
+                            </td></tr>
+                
+                
+        </tbody>
+    </table>
+    <img src="../images/doggy.png" alt="Dog Image" style="position: fixed; bottom: 0; right: 0;">
+</body>
+</html>

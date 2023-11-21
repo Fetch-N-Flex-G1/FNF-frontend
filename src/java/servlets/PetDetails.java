@@ -29,7 +29,7 @@ public class PetDetails extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter pw = response.getWriter();
         HttpSession session = request.getSession();
-        String userEmail = (String) session.getAttribute("credEmail");
+        String userEmail = (String) session.getAttribute("username");
 
         pw.println("<!DOCTYPE html>");
         pw.println("<html>");
@@ -67,7 +67,7 @@ public class PetDetails extends HttpServlet {
             ops.setString(7,PGENDER);
             ops.setString(8,PDATE);
             ops.setString(9,PEMAIL);
-            
+            System.out.println(PEMAIL);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 40px;font-family:DM Sans;\">Details added successfully</h1>");
