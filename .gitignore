@@ -4,3 +4,5 @@ build/web/
 .vscode/
 .idea/
 web/WEB-INF/db.properties
+web/WEB-INF/db.properties/
+nbproject
