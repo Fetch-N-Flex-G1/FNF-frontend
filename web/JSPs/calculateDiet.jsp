@@ -10,21 +10,25 @@
     <title>Dog Diet Chart</title>
     <style>
         body {
-            background-color: #1a1a1a;
+            background-color: #1E2227;
             color: #ffffff;
-            font-family:'DM Sans';
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            font-size: 18px;
+            
         }
 
         .container {
             width: 80%;
             margin: 20px auto;
-            background-color: #333;
+            background-image: url("../images/food.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             overflow: hidden; /* Ensure container corners are rounded */
@@ -32,11 +36,14 @@
 
         .content {
             padding: 20px;
+            padding-left: 40px;
+            font-family:'DM Sans';
         }
 
         h2, h3 {
-            color: #e65d0f;
+            color: #f28500;
             margin-bottom: 10px;
+            font-size: 32px;
         }
 
         .intake-section,
@@ -57,7 +64,7 @@
         .progress {
             height: 100%;
             border-radius: 5px;
-            background-color: #4CAF50;
+            background-color: #fad6a5;
         }
 
         table {
@@ -74,7 +81,7 @@
         }
 
         th {
-            background-color: #333;
+            background-color: #1E2227;
             color: white;
         }
 
@@ -92,6 +99,8 @@
         .suggestions-list li {
             margin-bottom: 5px;
         }
+        
+        
     </style>
 </head>
 <body>
@@ -131,26 +140,27 @@
     int eveningProtein = random.nextInt(5) + 3;
 %>
     <div class="container">
+           <h1 style="font-family: 'Comfortaa', sans-serif; padding-left: 40px; margin-bottom: 1rem; font-size: 100px; color: white; margin-top:4rem;">Diet Chart</h1>
+
         <div class="content">
-                <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 36px; color: white; text-align: center;margin-top:4rem;">Dog Diet Chart</h1>
 
             <div class="intake-section">
-                <h3>Today's Intake:</h3>
+                <h3>Today's Intake</h3>
                 <p>Water: <%= waterIntake %> ml</p>
                 <p>Calories: <%= calorieIntake %> kcal</p>
                 <p>Protein: <%= protein %> grams</p>
                 <p>Sleep Duration: <%= sleepDuration %> hours</p>
                 <p>Activity Level: <%= activityLevel %></p>
 
-                <h3>Remaining Intake for the Day:</h3>
+                <h3 style="margin-top:70px;">Remaining Water Intake</h3>
                 <div class="progress-bar">
                     <div class="progress" style="width: <%= waterPercentage %>%;"></div>
                 </div>
                 <p><%= remainingWater %> ml of water and <%= remainingCalories %> kcal remaining for the day.</p>
             </div>
-
+            
             <div class="diet-chart-section">
-                <h3>Diet Chart:</h3>
+                <h3 style="margin-top:70px;">Diet Chart</h3>
                 <table>
                     <tr>
                         <th>Time</th>
@@ -179,15 +189,16 @@
                 </table>
             </div>
 
-            <h3 class="suggestions-title">Meal Suggestions:</h3>
+            <h3 class="suggestions-title" style="color: #f28500; margin-top:70px;">Meal Suggestions</h3>
             <ul class="suggestions-list">
                 <li>Breakfast: High-protein kibble</li>
                 <li>Lunch: Chicken and rice</li>
                 <li>Dinner: Wet food with added vegetables</li>
             </ul>
+            
         </div>
     </div>
-
+                    
 
 </body>
 </html>
