@@ -19,7 +19,9 @@ public class SQLConnection {
     
     public OracleConnection connect() throws SQLException{
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:free", "c##fandf", "database");
+
+            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "fandf", "database");
+
             return oconn;
     }
     
@@ -57,6 +59,10 @@ public class SQLConnection {
 
     public void createGetInTouch() throws SQLException{
         runQuery("GET_IN_TOUCH","create table get_in_touch(NAME varchar2(200), EMAIL varchar2(200), MESSAGE varchar2(1000))");
+    }
+    
+    public void subscribers() throws SQLException{
+        runQuery("SUBSCRIBERS","create table subscribers(NAME varchar2(200), EMAIL varchar2(200), PACKAGE varchar2(200), PRICE varchar2(100))");
     }
 
     public void quit() throws SQLException{

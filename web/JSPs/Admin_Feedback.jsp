@@ -18,40 +18,67 @@
         <title>Feedbacks</title>
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
         <style>
-            *{
-                font-family: 'DM Sans';
-            }
-                table, tr, td
-                {
-                    padding: 10px;
-                    margin: 0 auto;
-                    border: 5px solid #ee6010;
-                    border-collapse: collapse;
-                    color:white;
-                    border-radius:2px;
-                }
-                th
-                {
-                    padding: 10px;
-                    border: 5px solid #ee6010;;
-                    border-collapse: collapse;
-                    color: white;
-                }
-                button{
-                    padding: 10px 35px;
-                    border-radius: 40px;
-                    background-color: #ee6010;
-                    color: white;
-                    margin-right:10px;
-                    border-color: transparent;
-                    font-size: 15px;
-                    font-weight: 650;
-                }
-                body{
-                    background-color: color;
-                }
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-            </style>
+        header {
+            text-align: center;
+            color: #ee6010;
+            font-size: 30px;
+            margin-top: 4rem;
+            padding: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #444;
+        }
+
+        th {
+            background-color: #333;
+            color: #ee6010;
+        }
+
+        tr:hover {
+            background-color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ee6010;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff7f50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
     </head>
     <%!
         // STEP 3: DECLARING OBJECTS AND VARIABLES
@@ -79,7 +106,7 @@
         
     %>
     <body style="background-color: black">
-        <h1 style="text-align: center; color: #ee6010; font-size: 30px; margin-top: 4rem;">Feedbacks</h1>
+        <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 36px; color: white; text-align: center;margin-top:4rem;">Feedbacks</h1>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
             <thead>
@@ -117,12 +144,9 @@
                     }
                 %>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="<%=orsmd.getColumnCount()%+1%>">&copy; FETCH-N-FLEX</th>
-                </tr>
-            </tfoot>
         </table>
+            
+                
         <%
             // STEP 11: CLOSING THE CONNECTIONS
             try {

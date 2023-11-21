@@ -62,8 +62,8 @@
         <div class="bottom">
             <div class="navbar left">
                 <a href=""><i class="fa-solid fa-house"></i> Home</a>
-                <a href=""><i class="fa-sharp fa-solid fa-utensils"></i> Diet Plans</a>
-                <a href="./reminders.html"><i class="fa-solid fa-bell"></i> Reminders</a>
+                <a href="./subscription_fees.jsp"><i class="fa-sharp fa-solid fa-utensils"></i> Diet Plans</a>
+                <a href="../Pages/reminders.html"><i class="fa-solid fa-bell"></i> Reminders</a>
                 <a href=""><i class="fa-solid fa-file-waveform"></i> Health Overview</a>
                 <a href="../Pages/emergency_contacts.html"><i class="fa-solid fa-triangle-exclamation"></i> Emergency</a>
             </div>

@@ -15,7 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Contact Us</title>
+        <title>Subscribers</title>
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
         <style>
         body {
@@ -96,7 +96,7 @@
             oconn = sqlcon.connect();
             
             // STEP 6: INSTANTIATING THE STATEMENT OBJECT
-            ops = (OraclePreparedStatement) oconn.prepareStatement("select * from get_in_touch");
+            ops = (OraclePreparedStatement) oconn.prepareStatement("select * from subscribers");
             
             // STEP 7: FILLING UP THE DATABASE RECORDS IN A TEMPORARY CONTAINER
             ors = (OracleResultSet) ops.executeQuery();
@@ -106,7 +106,7 @@
         
     %>
     <body style="background-color: black">
-        <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 36px; color: white; text-align: center;margin-top:4rem;">Contact Details</h1>
+        <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 36px; color: white; text-align: center;margin-top:4rem;">Subscribers</h1>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
             <thead>
@@ -144,7 +144,7 @@
                     }
                 %>
             </tbody>
-           
+            
         </table>
         <%
             // STEP 11: CLOSING THE CONNECTIONS

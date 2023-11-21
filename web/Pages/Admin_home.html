@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Portal</title>
     <link rel="stylesheet" href="../Stylesheets/admin_home.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="heading"><b>Welcome!</b> To <b style="color: #ee6010;">Admin</b> Portal</div>
+    <div class="heading">
+        <b>Welcome!</b>  To  <span style="color: #ee6010;">Admin</span>  Portal
+    </div>
     <div class="main">
-        <a href="../JSPs/Admin_Feedback.jsp"><div class="box box1">Feedback</div></a>
-        <a href="../JSPs/Admin_User_Details.jsp"><div class="box box2">User Details</div></a>
-        <a href="../JSPs/Admin_Contact_Us.jsp"><div class="box box3">Contact Us</div></a>
+        <div class="division divison_1">
+            <a href="../JSPs/Admin_Feedback.jsp"><div class="box box1">Feedback</div></a>
+            <a href="../JSPs/Admin_User_Details.jsp"><div class="box box2">User Details</div></a>
+        </div>
+        
+        <a href="../JSPs/Admin_Contact_Us.jsp"><div class="box box3">Add Doctors</div></a>
+        <div class="division divison_2">
+            <a href="../JSPs/Admin_Subscribers.jsp"><div class="box box4">Subscribers</div></a>
+            <a href="../JSPs/Admin_Contact_Us.jsp"><div class="box box5">Contact Details</div></a>
+        </div>
+        
+        
     </div>
 </body>
 </html>
