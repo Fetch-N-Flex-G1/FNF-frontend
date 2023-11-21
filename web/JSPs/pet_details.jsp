@@ -109,7 +109,7 @@
                 column_head.put("OWNER_NAME", "Owner");
                 column_head.put("WEIGHT", "Weight");
                 column_head.put("BREED", "Breed");
-                column_head.put("GENDER", "Gender");
+                column_head.put("PET_GENDER", "Gender");
                 column_head.put("AGE", "Age");
                 column_head.put("DATEOFBIRTH", "Date of Birth");
                 
