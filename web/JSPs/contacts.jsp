@@ -18,63 +18,66 @@
         <title>Emergency Contacts</title>
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
        <style>
-        * {
-            font-family: 'DM Sans';
+        body {
+            background-color: #191B1D !important;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        body {
-            background-color: color; /* Replace 'color' with an actual color value */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        h1 {
-            font-size: 5rem;
-            font-family: Comfortaa;
+        header {
             text-align: center;
             color: #ee6010;
-            margin-top: 2rem;
+            font-size: 30px;
+            margin-top: 4rem;
+            padding: 20px;
         }
 
         table {
-            border-collapse: separate;
-            border-spacing: 0;
             width: 80%;
-            margin: auto;
-            border-radius: 30px;
-            overflow: hidden;
-            margin-top: 2rem;
+            margin: 20px auto;
+            border-collapse: collapse;
         }
 
-        tr, td {
-            padding: 10px;
-            border: 1px solid #ee6010;
-            text-align: center;
-            color: white;
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #444;
         }
 
         th {
-            padding: 10px;
-            border: 1px solid #ee6010;
-            color: white;
-            background-color: #ee6010;
+            background-color:  #2c3439;
+            color: #ee6010;
+            font-size: 22px;
+        }
+
+        tr:hover {
+            background-color: #1E2227;
         }
 
         button {
-            padding: 10px 35px;
-            border-radius: 40px;
+            padding: 10px 20px;
+            border-radius: 5px;
             background-color: #ee6010;
-            color: white;
-            margin-right: 10px;
-            border-color: transparent;
-            font-size: 15px;
-            font-weight: 650;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff7f50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 
@@ -105,7 +108,7 @@
         
     %>
     <body style="background-color: black">
-        <h1 style="text-align: center; color: #ee6010; font-size: 30px; margin-top: 4rem;">Emergency Contacts</h1>
+        <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 40px; color: white; text-align: center;margin-top:4rem;">Emergency Contacts</h1>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
             <thead>

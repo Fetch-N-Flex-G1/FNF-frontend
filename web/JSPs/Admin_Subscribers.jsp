@@ -19,7 +19,7 @@
         <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
         <style>
         body {
-            background-color: #222;
+            background-color: #191B1D !important;
             color: #fff;
             font-family: 'DM Sans', sans-serif;
             margin: 0;
@@ -47,12 +47,13 @@
         }
 
         th {
-            background-color: #333;
+            background-color:  #2c3439;
             color: #ee6010;
+            font-size: 22px;
         }
 
         tr:hover {
-            background-color: #333;
+            background-color: #1E2227;
         }
 
         button {
@@ -106,7 +107,7 @@
         
     %>
     <body style="background-color: black">
-        <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 36px; color: white; text-align: center;margin-top:4rem;">Subscribers</h1>
+        <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 40px; color: white; text-align: center;margin-top:4rem;">Subscribers</h1>
         <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
         <table>
             <thead>
