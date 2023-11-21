@@ -68,6 +68,14 @@
         <servlet-name>PaymentGateway</servlet-name>
         <servlet-class>servlets.PaymentGateway</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateUserDetails</servlet-name>
+        <servlet-class>servlets.UpdateUserDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePetDetails</servlet-name>
+        <servlet-class>servlets.UpdatePetDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -143,6 +151,14 @@
     <servlet-mapping>
         <servlet-name>PaymentGateway</servlet-name>
         <url-pattern>/PaymentGateway</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateUserDetails</servlet-name>
+        <url-pattern>/UpdateUserDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePetDetails</servlet-name>
+        <url-pattern>/UpdatePetDetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
