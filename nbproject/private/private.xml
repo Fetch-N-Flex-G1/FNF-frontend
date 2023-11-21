@@ -3,13 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/SignUp.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/UserDetails.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/PetDetails.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/personal_info.jsp</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/Login.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/pet_details.jsp</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/SignUp.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/web/Pages/login.html</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/UserDetails.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/FeedbackForm.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/PaymentGateway.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/web/index.html</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/User.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/EmergencyCon.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/web/Pages/contact%20us.html</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/web/Pages/payment.html</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/ContactUs.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/firstpack/FeedbackServe.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/src/java/servlets/Login.java</file>
+            <file>file:/C:/Users/SHREASHREE/Desktop/Fetch-N-Flex/web/Stylesheets/style.css</file>
         </group>
     </open-files>
 </project-private>

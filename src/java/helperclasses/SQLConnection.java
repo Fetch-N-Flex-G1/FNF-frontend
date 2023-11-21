@@ -19,7 +19,7 @@ public class SQLConnection {
     
     public OracleConnection connect() throws SQLException{
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:free", "c##fandf", "database");
+            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "fandf", "database");
             return oconn;
     }
     
