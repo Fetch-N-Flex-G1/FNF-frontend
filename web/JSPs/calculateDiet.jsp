@@ -6,12 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
     <title>Dog Diet Chart</title>
     <style>
         body {
             background-color: #1a1a1a;
             color: #ffffff;
-            font-family: 'Comfortaa', cursive;
+            font-family:'DM Sans';
             margin: 0;
             display: flex;
             flex-direction: column;
