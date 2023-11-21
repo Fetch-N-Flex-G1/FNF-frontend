@@ -49,7 +49,7 @@ public class SQLConnection {
         runQuery("USER_DETAILS","create table user_details(f_name varchar2(100), l_name varchar2(100), email varchar2(255), ph_no number(20),address varchar2(400), gender varchar2(30),FOREIGN KEY (email) REFERENCES user_creds(email))");
     }
     public void createPetDetails() throws SQLException{
-        runQuery("PET_DETAILS", "CREATE TABLE pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20), Breed varchar2(400), Age number(30), Gender varchar2(30), DateOfBirth DATE, owner_email varchar2(255), FOREIGN KEY(email) REFERENCES user_creds(email))");
+        runQuery("PET_DETAILS", "CREATE TABLE pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20), Breed varchar2(400), Age number(30), Gender varchar2(30), DateOfBirth DATE, owner_email varchar2(255), FOREIGN KEY(owner_email) REFERENCES user_creds(email))");
 
     }
     
@@ -59,6 +59,9 @@ public class SQLConnection {
 
     public void createGetInTouch() throws SQLException{
         runQuery("GET_IN_TOUCH","create table get_in_touch(NAME varchar2(200), EMAIL varchar2(200), MESSAGE varchar2(1000))");
+    }
+    public void createDoctors() throws SQLException{
+       runQuery("CREATE_DOCTORS", "CREATE TABLE create_doctors(NAME varchar2(200), TYPE varchar2(200), PHONE_NUMBER number(20), ADDRESS varchar2(100), TIME TIMESTAMP)");
     }
     
     public void subscribers() throws SQLException{

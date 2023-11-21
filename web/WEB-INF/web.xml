@@ -61,6 +61,10 @@
         <servlet-class>servlets.AdminLogin</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>AdminDoctorAdd</servlet-name>
+        <servlet-class>servlets.AdminDoctorAdd</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>PaymentGateway</servlet-name>
         <servlet-class>servlets.PaymentGateway</servlet-class>
     </servlet>
@@ -131,6 +135,10 @@
     <servlet-mapping>
         <servlet-name>AdminLogin</servlet-name>
         <url-pattern>/AdminLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDoctorAdd</servlet-name>
+        <url-pattern>/AdminDoctorAdd</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PaymentGateway</servlet-name>

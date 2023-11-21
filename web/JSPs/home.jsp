@@ -39,7 +39,9 @@
                 <p class="link">Manage your pet's information</p>
                 </a>
                 <div class = "line"></div>
-                <p class="link">Market Place</p>
+                <a href="../Pages/AdminPersonAdd.html">
+                <p class="link">Doctors/Trainers</p>
+                </a>
                 <div class = "line"></div>
                 <a href="../Pages/fed.html">
                     <p class="link">Send for Feedback or Suggestions</p>
