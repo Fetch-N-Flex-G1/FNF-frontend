@@ -37,8 +37,7 @@ public class SignUp extends HttpServlet {
         SEMAIL = request.getParameter("remail");
         
         HttpSession session = request.getSession();
-        session.setAttribute("credEmail",SEMAIL);
-        
+        session.setAttribute("username",SEMAIL);
         SPASS = request.getParameter("rpass");
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
@@ -49,10 +48,15 @@ public class SignUp extends HttpServlet {
             OracleConnection conn;
             conn = obj.connect();
             obj.createUserCreds();
+            System.out.println("hello");
             ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO user_creds(EMAIL, PASSWORD) values(?, ?)");
             ops.setString(1, SEMAIL);
             ops.setString(2, SPASS);
+            System.out.println(SEMAIL);
+            System.out.println(ops);
             int rowsInserted = ops.executeUpdate();
+            System.out.println(rowsInserted);
+            System.out.println(rowsInserted);
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">User registered successfully</h1>");
                 pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please add more details to continue</p>");

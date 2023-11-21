@@ -31,7 +31,7 @@ public class UserDetails extends HttpServlet {
         PrintWriter pw = response.getWriter();
         
         HttpSession session = request.getSession();
-        String userEmail = (String) session.getAttribute("credEmail");
+        String userEmail = (String) session.getAttribute("username");
 
 
         pw.println("<!DOCTYPE html>");
@@ -68,10 +68,18 @@ public class UserDetails extends HttpServlet {
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Details added successfully</h1>");
-                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please add your pet details to continue</p>");
-                pw.println("<div style=\"text-align: center;\">");
-                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/PetDetails.html'\">Add your pet details</button>");
-                pw.println("</div>");
+                if(session.getAttribute("OWNER_EMAIL") == null){
+                    pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Please add your pet details to continue</p>");
+                    pw.println("<div style=\"text-align: center;\">");
+                    pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/PetDetails.html'\">Add your pet details</button>");
+                    pw.println("</div>");
+                }
+                else{
+                    pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">All details added, please continue to LogIn</p>");
+                    pw.println("<div style=\"text-align: center;\">");
+                    pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/login.html'\">Proceed to Log In</button>");
+                    pw.println("</div>");
+                }
 
 
             } else {

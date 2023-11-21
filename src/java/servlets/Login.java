@@ -16,8 +16,6 @@ import javax.servlet.http.HttpSession;
 import oracle.jdbc.OracleConnection;
 
 import helperclasses.SQLConnection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import oracle.jdbc.OraclePreparedStatement;
@@ -26,6 +24,7 @@ import oracle.jdbc.OracleResultSetMetaData;
 
 public class Login extends HttpServlet {
     private static final String SELECT_QUERY = "SELECT EMAIL, PASSWORD FROM user_creds WHERE EMAIL=? AND PASSWORD=?";
+    static OracleConnection oconn;
     
     @Override
     public void init() throws ServletException {
@@ -50,7 +49,7 @@ public class Login extends HttpServlet {
             OracleResultSetMetaData orsmd;
             
             SQLConnection sqlcon = new SQLConnection();
-            OracleConnection oconn = null;
+            oconn = null;
             try {
                 oconn = sqlcon.connect();
             } catch (SQLException ex) {
@@ -71,8 +70,13 @@ public class Login extends HttpServlet {
                     session.setAttribute("username", userEmail);
                     System.out.println(session);
                     System.out.printf("\u001B[34m%s\u001B[0m", userEmail);
-                    setUserSessionInfo(userEmail,request);
+                    
+                    
+                 
+                    setUserSessionInfo(userEmail,request,response);
+                    setUserPetInfo(userEmail,request,response);
                     response.sendRedirect("../../../Fetch-N-Flex/JSPs/home.jsp");
+                    
                     pw.println("</body></html>");
                     
                 } else {
@@ -89,32 +93,105 @@ public class Login extends HttpServlet {
         }
         
     
-        void setUserSessionInfo(String user_email, HttpServletRequest request) throws SQLException{
+        void setUserSessionInfo(String user_email, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
             OraclePreparedStatement ops;
-            OracleResultSet ors;
-            OracleResultSetMetaData orsmd;
+            OracleResultSet ors = null;
+            OracleResultSetMetaData orsmd = null;
             
-            SQLConnection sqlcon = new SQLConnection();
-            OracleConnection oconn = sqlcon.connect();
-            
-            HttpSession user_details = request.getSession();            
-            // Execute SQL query
-            String query = "SELECT * FROM user_details WHERE EMAIL = ?";
-            ops = (OraclePreparedStatement) oconn.prepareStatement(query);
-            ops.setString(1, user_email);
-            ors = (OracleResultSet) ops.executeQuery();
-            
-            // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
-            orsmd = (OracleResultSetMetaData) ors.getMetaData();
-            if (ors.next()) {
-                        for (int counter = 1; counter < orsmd.getColumnCount(); counter++) {
-                                        String column_name = orsmd.getColumnName(counter);
-                                        String column_value = ors.getString(counter);
-                                        user_details.setAttribute(column_name, column_value);
+            HttpSession user_details = request.getSession(); 
+//            if(user_details.getAttribute("EMAIL")==null){
+                System.out.println(user_details.getAttribute("EMAIL")==null);
+                // Execute SQL query
+                String query = "SELECT * FROM user_details WHERE EMAIL = ?";
+                ops = (OraclePreparedStatement) oconn.prepareStatement(query);
+                ops.setString(1, user_email);
+    //            try{
 
-                        }
-            }
+
+                // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
+                try{
+                    ors = (OracleResultSet) ops.executeQuery();
+                    orsmd = (OracleResultSetMetaData) ors.getMetaData();
+                }
+                catch(java.sql.SQLSyntaxErrorException ex){
+    //                 dataNotFound("user", response);
+//                    response.sendRedirect("../../../Fetch-N-Flex/Pages/user_details.html");
+                }
+                if (ors.next()) {
+                            for (int counter = 1; counter < orsmd.getColumnCount(); counter++) {
+                                            String column_name = orsmd.getColumnName(counter);
+                                            String column_value = ors.getString(counter);
+                                            user_details.setAttribute(column_name, column_value);
+
+                            }
+                }
+                else{
+//                   dataNotFound("user", response);
+    //                response.sendRedirect("../../../Fetch-N-Flex/Pages/user_details.html");
+                   System.out.println("User data not found");
+                }
+//            }
+//            setUserPetInfo(user_email,request,response);
             
         
     } 
-}
+    void setUserPetInfo(String user_email, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
+            OraclePreparedStatement ops;
+            OracleResultSet ors = null;
+            OracleResultSetMetaData orsmd = null;
+            
+            HttpSession user_details = request.getSession(); 
+//            if(user_details.getAttribute("OWNER_EMAIL")==null){
+                System.out.println(user_details.getAttribute("OWNER_EMAIL")==null);
+            // Execute SQL query
+                String query = "SELECT * FROM pet_details WHERE OWNER_EMAIL = ?";
+                ops = (OraclePreparedStatement) oconn.prepareStatement(query);
+                ops.setString(1, user_email);
+
+
+                // STEP 8: GETTING THE COLUMNS INFORMATION(METADATA)
+                try{
+                    ors = (OracleResultSet) ops.executeQuery();
+                    orsmd = (OracleResultSetMetaData) ors.getMetaData();
+                }
+                catch(java.sql.SQLSyntaxErrorException ex){
+//                     dataNotFound("pet", response);
+    //                response.sendRedirect("../../../Fetch-N-Flex/Pages/PetDetails.html");
+                }
+                if (ors.next()) {
+                            for (int counter = 1; counter < orsmd.getColumnCount(); counter++) {
+                                            String column_name = orsmd.getColumnName(counter);
+                                            String column_value = ors.getString(counter);
+                                            user_details.setAttribute(column_name, column_value);
+
+                            }
+                }
+                else{
+//                    dataNotFound("pet", response); 
+    //                response.sendRedirect("../../../Fetch-N-Flex/Pages/PetDetails.html");
+                    System.out.println("pet data not found");
+                }
+    }
+            
+                
+//                response.sendRedirect("../../../Fetch-N-Flex/JSPs/home.jsp");
+            
+ }        
+        
+    
+//    void dataNotFound(String name, HttpServletResponse response) throws IOException{
+//        PrintWriter pw = response.getWriter();
+//        System.out.println("Redirecting to"+name+" details");
+//        System.out.println(pw);
+//        String url = ("user".equals(name)) ? "user_details" : "PetDetails";
+//        System.out.println(url);
+//        pw.println("<body style=\"background-color: #0E0B0B;\">");
+//        pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
+//        pw.println("<h1>Please add your" +name+ "details to proceed</h1>");
+//        pw.println("<div style=\"text-align: center;\">");
+//        pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/"+url+".html'\">add " +name+" details</button>");
+//        pw.println("</div>");
+//        pw.println("</body>");
+//        
+//    }
+//}
