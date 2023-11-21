@@ -111,7 +111,6 @@
                 column_head.put("BREED", "Breed");
                 column_head.put("PET_GENDER", "Gender");
                 column_head.put("AGE", "Age");
-                column_head.put("DATEOFBIRTH", "Date of Birth");
                 
                 Set<String> keys = column_head.keySet();
                 System.out.println(column_head);

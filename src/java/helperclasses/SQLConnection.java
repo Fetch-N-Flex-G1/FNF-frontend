@@ -19,7 +19,7 @@ public class SQLConnection {
     
     public OracleConnection connect() throws SQLException{
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:free", "c##fandf", "database");
+            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:free", "c##fandf", "database");
             return oconn;
     }
     
@@ -47,7 +47,7 @@ public class SQLConnection {
         runQuery("USER_DETAILS","create table user_details(f_name varchar2(100), l_name varchar2(100), email varchar2(255), ph_no number(20),address varchar2(400), gender varchar2(30),FOREIGN KEY (email) REFERENCES user_creds(email))");
     }
     public void createPetDetails() throws SQLException{
-        runQuery("PET_DETAILS", "CREATE TABLE pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20), Breed varchar2(400), Age number(30), Pet_gender varchar2(30), DateOfBirth DATE, owner_email varchar2(255), FOREIGN KEY(owner_email) REFERENCES user_creds(email))");
+        runQuery("PET_DETAILS", "CREATE TABLE pet_details(Pet_Name varchar2(100), Owner_Name varchar2(100), Weight number(20), Height number(20), Breed varchar2(400), Age number(30), Pet_gender varchar2(30), owner_email varchar2(255), FOREIGN KEY(owner_email) REFERENCES user_creds(email))");
 
     }
     
