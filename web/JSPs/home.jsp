@@ -67,7 +67,8 @@
                 <a href="./DietInput.jsp"><i class="fa-sharp fa-solid fa-utensils"></i> Diet Plans</a>
                 <a href="../Pages/reminders.html"><i class="fa-solid fa-bell"></i> Reminders</a>
                 <a href=""><i class="fa-solid fa-file-waveform"></i> Health Overview</a>
-                <a href="../Pages/emergency_contacts.html"><i class="fa-solid fa-triangle-exclamation"></i> Emergency</a>
+                <a href="contacts.jsp"><i class="fa-solid fa-triangle-exclamation"></i> Emergency</a>
+                
             </div>
             <div class="right">
                 <div class="right-top">

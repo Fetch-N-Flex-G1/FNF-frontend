@@ -79,6 +79,25 @@
             bottom: 0;
             width: 100%;
         }
+        .button{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%
+          }
+        .button a input{
+           height: 50px;
+           width: 150px;
+           border: none;
+           color: #fff;
+           font-size: 18px;
+           font-weight: 500;
+           letter-spacing: 1px;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           background-color: #ee6010;
+         }
     </style>
 
     </head>
@@ -158,5 +177,8 @@
                 e.printStackTrace();
             }
         %>
+        <div class="button">
+            <a href="../Pages/emergency_contacts.html"><input type="submit" id="addButton" value="Add Contact"></a>
+        </div>
     </body>
 </html>
