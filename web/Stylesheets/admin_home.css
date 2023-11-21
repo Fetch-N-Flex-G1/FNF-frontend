@@ -57,15 +57,17 @@ body{
     width: 210px;
     background-color: #22262C;
     border: 2px solid #ee6010;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.25s;
+    transition-property:  border-radius, transform;
+    transition-duration: .25s;
 }
 
 .box:hover{
     transform: scale(1.2);
+    border-radius: 20px;
+    
     
 }
 

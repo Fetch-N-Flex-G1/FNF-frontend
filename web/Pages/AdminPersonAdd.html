@@ -1,118 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Lumanosimo&family=Poppins&display=swap" rel="stylesheet">
-    <title>Doctors/Trainer</title>
-    
-    <style>
-        * {
-            font-family: 'DM Sans';
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title> Add Doctor Details </title>
+    <link rel="stylesheet" href="doctor.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #191B1D;
+  background-size: cover;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #0e0b0b;
+  color: white;
+  padding: 25px 30px;
+  border: 1px solid #ee6010;;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  color: #ee6010;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 20px;
+  padding-left: 15px;
+  border: transparent;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  background-color: #2d2a2a;
+  color: rgba(255, 255, 255, 0.25);
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #0e0b0b 0%, #121212 100%);
-            margin: 0;
-            padding: 20px;
-            backdrop-filter: blur(2px); /* Adjust the blur intensity as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        } 
+textarea{
+    height: 70px;
+    width: 214%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-left: 15px;
+    border: transparent;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background-color: #2d2a2a;
+    color: rgba(255, 255, 255, 0.427);
+  }
 
-        .emergency-container {
-            max-width: 800px;
-            margin: 20px;
-            background-color: #2d2a2a;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            color: white;
-            border: 2px solid #ee6010;
-        }
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border: 2px solid #ee6010 ;
+}
 
-        h1 {
-            font-family: Comfortaa, sans-serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #ee6010;
-        }
+textarea:focus{
+    border: 2px solid #ee6010 ;
+}
 
-        .group {
-            margin-bottom: 20px;
-            border-color: #1313133b;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: white;
-        }
-
-        input {
-            color: white;
-            border-radius: 20px;
-            border-color: transparent;
-            height: 2.5rem;
-            width: 100%;
-            background: #2d2a2a;
-            font-family: 'DM Sans';
-            font-size: 15px;
-            margin-top: 8px;
-            padding-left: 1rem;
-            transition: border-color 0.3s;
-            outline: none;
-            border: 1px solid #2d2a2a;
-        }
-
-        button {
-            padding: 12px 40px;
-            border-radius: 40px;
-            background-color: #ee6010;
-            color: white;
-            border-color: transparent;
-            font-size: 16px;
-            font-weight: 700;
-            margin-right: 8px;
-            cursor: pointer;
-        }
-
-    </style>
-</head>
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 100%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #ee6010;
+  
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 20px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color: #ee6010;
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background-color: #ee6010;
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+     </style>
+   </head>
 <body>
-    <body>
-        <form action="http://localhost:8080/Fetch-N-Flex/AdminDoctorAdd" method="post">
-            <div class="emergency-container">
-                <h1>Doctors/Trainer</h1>
-                <div class="group">
-                    <label for="name">Name of Doctor/Trainer:</label>
-                    <input type="text" id="name" name="rname" placeholder="Enter name">
-                    <label for="type">Type</label>
-                    <input type="text" id="type" name="rtype" placeholder="Enter Doctor/Trainer" pattern="Doctor|Trainer" title="Type must be either 'Doctor' or 'Trainer'">
-                </div>
+  <div class="container">
+    <div class="title">Doctors <span style="color: #ffffff;">&</span> Trainers</div>
+    <div class="content">
+      <form action="http://localhost:8080/Fetch-N-Flex/AdminDoctorAdd" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Name of Doctor/Trainer</span>
+            <input type="text" id="name" name="rname" placeholder="Enter name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Type</span>
+            <input type="text" id="type" name="rtype" placeholder="Enter Doctor/Trainer Name" pattern="Doctor|Trainer" title="Type must be either 'Doctor' or 'Trainer'" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input type="number" id="contactNumber" name="rnum" placeholder="Enter Contact Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Time</span>
+            <input type="text" id="time" name="rtime" placeholder="hh:mm AM/PM">
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <textarea id="address" name="radd" placeholder="Enter Address" rows="4" cols="44" required></textarea>
+          </div>
+        </div>
         
-                <div class="group">
-                    <label for="contactNumber">Contact Number:</label>
-                    <input type="number" id="contactNumber" name="rnum" placeholder="Enter Contact Number">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="radd" placeholder="Address">
-                    <label for="time">Time:</label>
-                    <input type="text" id="time" name="rtime" placeholder="HH:mm AM/PM">
+        <div class="button">
+          <input type="submit" value="Add">
+        </div>
+      </form>
+    </div>
+  </div>
 
-                </div>
-        
-                <button id="addButton">ADD</button>  
-            </div>
-        </form>
-        </body>
+</body>
 </html>
-

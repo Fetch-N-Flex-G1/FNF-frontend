@@ -18,63 +18,66 @@
     <title>Doctors/Trainers</title>
     <!-- STEP 2: ADDING INTERNAL STYLE FOR TABLE -->
     <style>
-        *{
-            font-family: 'DM Sans';
+        body {
+            background-color: #191B1D !important;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        h1 {
+        header {
             text-align: center;
             color: #ee6010;
             font-size: 30px;
-            margin-top: 2rem;
+            margin-top: 4rem;
+            padding: 20px;
         }
 
         table {
             width: 80%;
-            margin-top: 1rem;
+            margin: 20px auto;
             border-collapse: collapse;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            background-color: #2d2a2a;
         }
 
         th, td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #ee6010;
-            color: white;
+            border-bottom: 2px solid #444;
         }
 
         th {
-            background-color: #1a1a1a;
+            background-color:  #2c3439;
+            color: #ee6010;
+            font-size: 22px;
         }
 
-        td {
-            background-color: #363636;
+        tr:hover {
+            background-color: #1E2227;
         }
 
         button {
-            padding: 8px 16px;
-            border-radius: 4px;
+            padding: 10px 20px;
+            border-radius: 5px;
             background-color: #ee6010;
-            color: white;
+            color: #fff;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #d54e0a;
+            background-color: #ff7f50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -93,7 +96,7 @@
 %>
 
 <body>
-    <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 36px; color: white; text-align: center;margin-top:4rem;">Doctors/Trainers</h1>
+    <h1 style="font-family: 'Comfortaa', sans-serif; margin-bottom: 3rem; font-size: 40px; color: white; text-align: center;margin-top:4rem;">Doctors & Trainers</h1>
 
     <!-- STEP 1: BASIC STRUCTURE OF A TABLE -->
     <table>
