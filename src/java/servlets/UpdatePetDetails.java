@@ -56,7 +56,7 @@ public class UpdatePetDetails extends HttpServlet {
             
             
             HttpSession session = request.getSession();
-            String userEmail = (String) session.getAttribute("OWNER_EMAIL");
+            String userEmail = (String) session.getAttribute("EMAIL");
             String default_pet_name = (String)session.getAttribute("PET_NAME");
             String default_owner_name= (String)session.getAttribute("OWNER_NAME");
             String default_weight = (String)session.getAttribute("WEIGHT");
@@ -74,16 +74,16 @@ public class UpdatePetDetails extends HttpServlet {
             pw.println("<body>");
             pw.println("<h1>Servlet Register</h1>");
             
-            String P_NAME = request.getParameter("Pet_Name")!= ""?request.getParameter("f_name"):default_pet_name;
-            String O_NAME = request.getParameter("Owner_Name")!= ""?request.getParameter("l_name"):default_owner_name;
-            String P_WEIGHT = request.getParameter("Weight")!= ""?request.getParameter("ph_no"):default_weight;
-            String P_HEIGHT = request.getParameter("Height")!= ""?request.getParameter("ph_no"):default_height;
-            String P_BREED = request.getParameter("Breed")!= ""?request.getParameter("ph_no"):default_breed;
-            String P_AGE= request.getParameter("Age")!= ""?request.getParameter("address"):default_age;
-            String P_GENDER = request.getParameter("Gender")!= ""?request.getParameter("ph_no"):default_gender;
+            String P_NAME = request.getParameter("Pet_Name")!= ""?request.getParameter("Pet_Name"):default_pet_name;
+            String O_NAME = request.getParameter("Owner_Name")!= ""?request.getParameter("Owner_Name"):default_owner_name;
+            String P_WEIGHT = request.getParameter("Weight")!= ""?request.getParameter("Weight"):default_weight;
+            String P_HEIGHT = request.getParameter("Height")!= ""?request.getParameter("Height"):default_height;
+            String P_BREED = request.getParameter("Breed")!= ""?request.getParameter("Breed"):default_breed;
+            String P_AGE= request.getParameter("Age")!= ""?request.getParameter("Age"):default_age;
+            String P_GENDER = request.getParameter("Gender")!= ""?request.getParameter("Gender"):default_gender;
             System.out.println( default_gender);
-            
-            String SEMAIL= userEmail;
+            System.out.println();
+            String O_EMAIL= userEmail;
 //            System.out.println(SF_NAME+SPH_NO+SADDRESS+SGENDER+SEMAIL);
             pw.println("<body style=\"background-color: #0E0B0B;\">");
             pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
@@ -101,9 +101,9 @@ public class UpdatePetDetails extends HttpServlet {
             ops.setString(5, P_BREED);
             ops.setString(6,P_AGE);
             ops.setString(7,P_GENDER);
-            ops.setString(8,userEmail);
+            ops.setString(8,O_EMAIL);
  
-            System.out.println(SEMAIL);
+            System.out.println(O_EMAIL + P_NAME + O_NAME + P_WEIGHT + P_HEIGHT + P_BREED + P_AGE + P_GENDER);
             int rowsUpdated = ops.executeUpdate();
             if (rowsUpdated > 0) {
 //                conn.commit();
