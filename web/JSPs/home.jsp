@@ -82,8 +82,7 @@
                     <p class="link">Get in Touch</p>
                 </a>
                 <div class = "line"></div>
-                <p class="log-out">Log Out</p>
-
+                <a href="log_out.jsp"><p class="log-out">Log Out</p></a>
             </div>
         </div>
         <script src="../JS/script.js">
@@ -119,7 +118,7 @@
                             </div>
                             
                             <div class="link">
-                                <a href="">edit <i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="../Pages/update_pet_details.html">edit <i class="fa-solid fa-pen-to-square"></i></a>
                             </div>
 
                         </div>
