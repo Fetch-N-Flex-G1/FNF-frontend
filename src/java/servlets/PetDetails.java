@@ -45,6 +45,12 @@ public class PetDetails extends HttpServlet {
         String PBREED = request.getParameter("Breed");
         String PAGE = request.getParameter("Age");
         String PGENDER = request.getParameter("gender");
+        
+        if (PGENDER.toLowerCase() == "m")
+            PGENDER = "Male";
+        else
+            PGENDER = "Female"; 
+           
         String PEMAIL = userEmail;
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
