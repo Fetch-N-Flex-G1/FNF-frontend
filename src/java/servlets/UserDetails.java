@@ -62,7 +62,7 @@ public class UserDetails extends HttpServlet {
             ops.setString(3,SEMAIL);
             ops.setString(4, SPH_NO);
             ops.setString(5, SADDRESS);
-            ops.setString(6, SGENDER);
+            ops.setString( 6, SGENDER);
  
             System.out.println(SEMAIL);
             int rowsInserted = ops.executeUpdate();

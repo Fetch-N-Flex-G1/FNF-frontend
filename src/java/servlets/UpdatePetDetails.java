@@ -82,7 +82,7 @@ public class UpdatePetDetails extends HttpServlet {
             String P_AGE= request.getParameter("Age")!= ""?request.getParameter("Age"):default_age;
             String P_GENDER = request.getParameter("Gender")!= ""?request.getParameter("Gender"):default_gender;
             
-            if (P_GENDER.toLowerCase() == "m")
+            if ("m".equals(P_GENDER.toLowerCase()))
                 P_GENDER = "Male";
             else
                 P_GENDER = "Female"; 

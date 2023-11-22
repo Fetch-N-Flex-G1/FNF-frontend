@@ -26,12 +26,23 @@ public class SQLConnection {
             return oconn;
     }
     
+   
+    public boolean exists(String table_name) throws SQLException{
+        PreparedStatement stmt = oconn.prepareStatement("SELECT TABLE_NAME FROM ALL_TABLES WHERE TABLE_NAME = ?");
+        stmt.setString(1, table_name);
+             ResultSet tables = stmt.executeQuery();
+            if (tables.next()) {
+                System.out.println("Table " +table_name+ " exists");
+                return true;
+            }
+            System.out.println("Table " +table_name+" does not exist");
+            return false;
+    }
+    
     public void runQuery(String table_name, String query) throws SQLException{
             Statement statement = oconn.createStatement();
-            PreparedStatement stmt = oconn.prepareStatement("SELECT TABLE_NAME FROM ALL_TABLES WHERE TABLE_NAME = ?");
-            stmt.setString(1, table_name);
-            ResultSet tables = stmt.executeQuery();
-            if (tables.next()) {
+            
+            if (exists(table_name)) {
                 System.out.println("Table " +table_name+ " exists");
             } else {
                 System.out.println("Table " +table_name+" does not exist");

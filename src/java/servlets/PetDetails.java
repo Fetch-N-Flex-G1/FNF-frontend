@@ -46,7 +46,7 @@ public class PetDetails extends HttpServlet {
         String PAGE = request.getParameter("Age");
         String PGENDER = request.getParameter("gender");
         
-        if (PGENDER.toLowerCase() == "m")
+        if ("m".equals(PGENDER.toLowerCase()))
             PGENDER = "Male";
         else
             PGENDER = "Female"; 

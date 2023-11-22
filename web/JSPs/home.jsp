@@ -34,13 +34,21 @@
     HttpSession sess = request.getSession(true);
 //  session.setAttribute("username", "johndoe");
     String email = (String)sess.getAttribute("username");
+    email = email != null ? email : "";
     String name = (String)sess.getAttribute("F_NAME");
+    name = name != null ? name :"";
     String weight = (String)sess.getAttribute("WEIGHT");
+    weight = weight != null ? weight : "";
     String pet_name = (String)sess.getAttribute("PET_NAME");
+    pet_name = pet_name != null ? pet_name : "";
     String breed = (String)sess.getAttribute("BREED");
+    breed = breed != null ? breed : "";
     String height = (String)sess.getAttribute("HEIGHT");
+    height = height != null ? height : "";
     String pet_gender = (String)sess.getAttribute("PET_GENDER");
+    pet_gender = pet_gender != null ? pet_gender : "";
     String age = (String)sess.getAttribute("AGE");
+    age = age != null ? age : "0";
     int age_int = Integer.parseInt(age);
     String dob = calculateDobFromAge(age_int); 
 %>
