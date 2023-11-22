@@ -20,7 +20,7 @@ public class ReadDBProps {
     // Main driver method
     public static void loadConfig()
     {
-        String filePath = getProjectRootPath()+"/db.properties";
+        String filePath = getProjectRootPath()+"/conf/db.properties";
         System.out.println(filePath);
         Properties prop = new Properties();
 
