@@ -122,6 +122,7 @@
                 <% } %>
                 <<tr><td colspan="2">
                                 <a href="../Pages/update_user_details.html"><button>Edit</button></a>
+                                <a href="delete_user.jsp"><button>Delete your account</button></a>
                             </td></tr>
                 
                 
