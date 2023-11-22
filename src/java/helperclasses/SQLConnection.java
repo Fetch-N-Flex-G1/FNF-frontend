@@ -19,7 +19,10 @@ public class SQLConnection {
     
     public OracleConnection connect() throws SQLException{
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-            oconn = (OracleConnection) DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "fandf", "database");
+            ReadDBProps.loadConfig();
+//            System.out.println(ReadDBProps.dbUrl+ReadDBProps.dbUser+ ReadDBProps.dbPassword);
+//            oconn = (OracleConnection) DriverManager.getConnection(ReadDBProps.dbUrl, ReadDBProps.dbUser, ReadDBProps.dbPassword);
+            oconn = (OracleConnection) DriverManager.getConnection(ReadDBProps.dbUrl, ReadDBProps.dbUser, ReadDBProps.dbPassword);
             return oconn;
     }
     
