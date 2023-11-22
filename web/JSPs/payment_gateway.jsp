@@ -45,19 +45,22 @@
             <span class="details">CVV</span>
             <input type="password" inputmode="numeric" id="cvv" name="cvv" placeholder="Enter your cvv" required>
           </div>
-         
-        </div>
-        <label for="package">Select a package:</label>
-        <input list="packageOptions" name="package" id="package" onchange="updatePrice()" required>
-        <datalist id="packageOptions">
-          <option value="Starter">
-          <option value="Supreme">
-          <option value="Standard">
-        </datalist>
-      <br>
-      <label for="price">Price:</label>
-      <input type="number" name="price" id="price" readonly>
+          <div class="input-box">
+            <span for="package" class="details">Select Package</span>
+            <input list="packageOptions" name="package" id="package" placeholder="Enter your package" onchange="updatePrice()" required>
+            <datalist id="packageOptions">
+              <option value="Starter">
+              <option value="Supreme">
+              <option value="Standard">
+            </datalist>
+          </div>
+          <div class="input-box">
+            <span for="price" class="details">Price</span>
+            <input type="number" name="price" id="price" placeholder="Enter the price" readonly>
+          </div>
+          
 
+        </div>
       
         <div class="button">
           <input type="submit" value="Pay">

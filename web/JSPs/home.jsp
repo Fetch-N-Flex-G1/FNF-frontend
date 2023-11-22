@@ -101,54 +101,36 @@
             <div class="navbar left">
                 <a href=""><i class="fa-solid fa-house"></i> Home</a>
                 <a href="./DietInput.jsp"><i class="fa-sharp fa-solid fa-utensils"></i> Diet Plans</a>
-                <a href="../Pages/reminders.html"><i class="fa-solid fa-bell"></i> Reminders</a>
-                <a href=""><i class="fa-solid fa-file-waveform"></i> Health Overview</a>
                 <a href="contacts.jsp"><i class="fa-solid fa-triangle-exclamation"></i> Emergency</a>
                 
             </div>
             <div class="right">
                 <div class="right-top">
-                    <img src="../../images/Avatar.png" alt="">
+                    <img src="../images/Avatar.png" alt="">
                     <div class="right-top-right">
                         <div class="top-content">
                             <div>
-                                <p class="name" style="font-size: 40px;"><%= pet_name%></p>
-                                <p class="breed" style="font-size: 15px; color:#EA6D13;"><%=breed%></p>
+                                <p class="name" style="font-size: 50px;"><%= pet_name%></p>
+                                <p class="breed" style="font-size: 22px; color:#EA6D13;"><%=breed%></p>
                             </div>
                             <div>
-                                <p class="date" style="font-size: 15px; margin-bottom: 20px;"><%=dob%></p>
-                                <p class="gender" style="text-align: right;"><%=pet_gender%></p>
+                                <p class="date" style="font-size: 30px; margin-bottom: 5px;"><%=dob%></p>
+                                <p class="gender" style="text-align: right; font-size: 30px;"><span style="color: #EA6D13;"><%=pet_gender%></span></p>
                             </div>
                         </div>
                         <div class="middle-content">
                             <div>
-                                <p class="weight" style="font-size: 20px;">Weight: <%=weight%> KG</p>
-                                <p class="height" style="font-size: 20px; margin-bottom: 10px;"><%=height%> centimeters</p>
+                                <p class="weight" style="font-size: 35px;">Weight : <span style="color: #EA6D13;"><%=weight%></span> KG</p>
+                                <p class="height" style="font-size: 35px; margin-bottom: 10px;">Height : <span style="color: #EA6D13;"><%=height%></span> CM</p>
                             </div>
                             
                             <div class="link">
                                 <a href="../Pages/update_pet_details.html">edit <i class="fa-solid fa-pen-to-square"></i></a>
                             </div>
-
                         </div>
                     </div>
                 </div>
-                <div class="right-middle">
-                    <div class="right-middle-left box">
-                        <p class="activity">Activity</p>
-                    </div>
-                    <div class="right-middle-right box">
-                        <p class="water-intake">Water Intake</p>
-                    </div>
-                </div>
-                <div class="right-bottom">
-                    <div class="right-bottom-left box">
-                        <p class="sleep">Sleep</p>
-                    </div>
-                    <div class="right-bottom-right box">
-                        <p class="weight">Weight</p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

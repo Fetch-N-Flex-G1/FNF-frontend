@@ -24,7 +24,6 @@ html,body{
     padding-left: 80px;
     padding-right: 20px;
     padding-top: 20px;
-
 }
 .top>img{
     width: 50px;
@@ -48,7 +47,7 @@ html,body{
     justify-content: center;
     flex-direction: column;
     padding-left: 40px;
-    font-size: 20px;
+    font-size: 25px;
 }
 .bottom>.navbar>a{
     text-decoration: none;
@@ -69,23 +68,26 @@ html,body{
 .bottom>.right>.right-top{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+    margin-top: 40px;
 }
 .bottom>.right>.right-top>img{
-    width: 250px;
+    width: 350px;
 }
 .bottom>.right>.right-top>.right-top-right{
-    width: 550px;
-    height: 200px;
+    width: 700px;
+    height: 500px;
     background-color: #161111;
     border-radius: 20px;
     padding: 20px;
+    margin: 0 250px 0 150px;
 }
 .bottom>.right>.right-top>.right-top-right>.top-content{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 270px;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content{
     display: flex;
@@ -93,12 +95,12 @@ html,body{
     align-items: center;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content>.link{
-    padding-top: 10px;
+    padding-top: 45px;
 }
 .bottom>.right>.right-top>.right-top-right>.middle-content>.link>a{
     text-decoration: none;
     color: #EA6D13;
-    font-size: 20px;
+    font-size: 25px;
 }
 .bottom>.right>.right-middle{
     display: flex;
