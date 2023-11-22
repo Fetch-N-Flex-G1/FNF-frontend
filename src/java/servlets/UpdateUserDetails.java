@@ -61,20 +61,10 @@ public class UpdateUserDetails extends HttpServlet {
             pw.println("<body>");
             pw.println("<h1>Servlet Register</h1>");
             String SF_NAME = request.getParameter("f_name")!= ""?request.getParameter("f_name"):default_f_name;
-            System.out.println( default_f_name);
-            System.out.println( SF_NAME);
             String SL_NAME = request.getParameter("l_name")!= ""?request.getParameter("l_name"):default_l_name;
-            System.out.println( default_l_name);
-            System.out.println( SL_NAME);
             String SPH_NO = request.getParameter("ph_no")!= ""?request.getParameter("ph_no"):default_ph_no;
-            System.out.println( default_ph_no);
-            System.out.println( SPH_NO);
             String SADDRESS= request.getParameter("address")!= ""?request.getParameter("address"):default_address;
-            System.out.println( default_address);
-            System.out.println( SADDRESS);
             String SGENDER = request.getParameter("gender")!= ""?request.getParameter("gender"):default_gender;
-            System.out.println( default_gender);
-            System.out.println( SGENDER);
             
             String SEMAIL= userEmail;
 //            System.out.println(SF_NAME+SPH_NO+SADDRESS+SGENDER+SEMAIL);
@@ -98,6 +88,7 @@ public class UpdateUserDetails extends HttpServlet {
             int rowsUpdated = ops.executeUpdate();
             if (rowsUpdated > 0) {
 //                conn.commit();
+                Login.setUserSessionInfo(userEmail, request, response);
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Your details have been updated</h1>");
                 
                 pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">You can proceed back to the home screen</p>");

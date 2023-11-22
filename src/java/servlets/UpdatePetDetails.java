@@ -113,6 +113,7 @@ public class UpdatePetDetails extends HttpServlet {
             int rowsUpdated = ops.executeUpdate();
             if (rowsUpdated > 0) {
 //                conn.commit();
+                Login.setUserPetInfo(userEmail, request, response);
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Your pet's details have been updated</h1>");
                 
                 pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">You can proceed back to the home screen</p>");

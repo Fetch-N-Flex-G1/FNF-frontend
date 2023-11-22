@@ -4,16 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/UpdateUserDetails.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/helperclasses/ReadDBProps.java</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/Pages/update_pet_details.html</file>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/Pages/update_user_details.html</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/UserDetails.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/WEB-INF/db.properties</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/PetDetails.java</file>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/personal_info.jsp</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/helperclasses/CreateUseSession.java</file>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
             <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/pet_details.jsp</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/Login.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/.gitignore</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/UpdatePetDetails.java</file>
+            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/Pages/PetDetails.html</file>
         </group>
     </open-files>
 </project-private>
