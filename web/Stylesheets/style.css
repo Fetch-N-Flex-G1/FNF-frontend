@@ -145,7 +145,7 @@ a {
 .header_section{
 	width: 100%; 
 	float: left;
-	background-image: url(../images/banner.jpg);
+	background-image: url(../images/face-portrait-brown-chocolate-labrador-retriever-dog-isolated-black-background_137240-4.jpg);
 	height: auto;
 	padding-top: 20px;	
 	background-size: cover;
@@ -201,9 +201,10 @@ a {
 .consectetur_text{
 	width: 90%;
 	float: left;
-	font-size: 24px;
-	color: #fefcfc;
+	font-size: 22px;
+	color: #ee6010;
 	line-height: 50px;
+    padding-bottom: 2rem;
 }
 
 .banner_bt{
@@ -231,7 +232,6 @@ a {
     background-color: #ee6010;
     width: 10%;
     text-align: center;
-    float: right;
     padding-top: 20px;
     color: #ffffff;
 }
@@ -239,7 +239,7 @@ a {
 .about_section{
 	width: 100%;
 	float: left;
-	background-image: url(../images/about-img.jpg);
+	background-image: url(../images/adorable-brown-white-basenji-dog-smiling-giving-high-five-isolated-white_346278-1657.avif);
 	height: auto;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -292,7 +292,7 @@ a {
     background-color: #000;
     border-radius: 60px;
     height: 70px;
-    font-size: 20pt;
+    font-size: 21pt;
     border: 0px;
     color: #fff;
 }
@@ -416,7 +416,7 @@ a {
 .touch_section{
 	width: 100%;
 	float: left;
-	background-image: url(../images/email-img.jpg);
+	background-image: url(../images/shiba-inu-dog-relaxing-bed_23-2149478797.avif);
 	height: auto;
 	padding-top: 55px;
 	background-size: 100%;
@@ -468,7 +468,7 @@ a {
     text-align: center;
 }
 
-button.main_bt {
+.main_bt {
     background: #ee6010;
     border: none;
     color: #fff;
@@ -526,7 +526,7 @@ button.btn.btn-primary, button.btn.btn-primary:hover, button.btn.btn-primary:foc
 .our_texts{
 	width: 100%;
 	float: left;
-	font-size: 40pt;
+	font-size: 30pt;
 	color: #ebebeb;
 }
 

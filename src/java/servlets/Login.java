@@ -93,7 +93,7 @@ public class Login extends HttpServlet {
         }
         
     
-        void setUserSessionInfo(String user_email, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
+        static void setUserSessionInfo(String user_email, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
             OraclePreparedStatement ops;
             OracleResultSet ors = null;
             OracleResultSetMetaData orsmd = null;
@@ -135,7 +135,7 @@ public class Login extends HttpServlet {
             
         
     } 
-    void setUserPetInfo(String user_email, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
+    static void setUserPetInfo(String user_email, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException{
             OraclePreparedStatement ops;
             OracleResultSet ors = null;
             OracleResultSetMetaData orsmd = null;

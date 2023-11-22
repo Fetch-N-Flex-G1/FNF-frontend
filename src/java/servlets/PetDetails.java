@@ -45,7 +45,12 @@ public class PetDetails extends HttpServlet {
         String PBREED = request.getParameter("Breed");
         String PAGE = request.getParameter("Age");
         String PGENDER = request.getParameter("gender");
-        String PDATE = request.getParameter("date");
+        
+        if ("m".equals(PGENDER.toLowerCase()))
+            PGENDER = "Male";
+        else
+            PGENDER = "Female"; 
+           
         String PEMAIL = userEmail;
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
@@ -57,7 +62,7 @@ public class PetDetails extends HttpServlet {
             OracleConnection conn;
             conn = obj.connect();
             obj.createPetDetails();
-            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Gender,DateOfBirth,owner_email) values(?,?,?,?,?,?,?, TO_DATE(?, 'YYYY-MM-DD'),?)");
+            ops = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO pet_details(Pet_Name,Owner_Name,Weight,Height,Breed,Age,Pet_gender,owner_email) values(?,?,?,?,?,?,?,?)");
             ops.setString(1,P_NAME);
             ops.setString(2,O_NAME);
             ops.setString(3,PWEIGHT);
@@ -65,8 +70,7 @@ public class PetDetails extends HttpServlet {
             ops.setString(5,PBREED);
             ops.setString(6,PAGE);
             ops.setString(7,PGENDER);
-            ops.setString(8,PDATE);
-            ops.setString(9,PEMAIL);
+            ops.setString(8,PEMAIL);
             System.out.println(PEMAIL);
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {

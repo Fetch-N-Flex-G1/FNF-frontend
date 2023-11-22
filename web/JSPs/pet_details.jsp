@@ -22,7 +22,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Personal Info</title>
+    <title>Pet Info</title>
     <style>
         * {
             font-family: 'DM Sans';
@@ -98,7 +98,7 @@
 </head>
 
 <body style="background-color: black">
-    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">Your Pet</p>
+    <p style="text-align: center; color: #ee6010; font-size: 40px; font-family: Comfortaa; font-weight: bold; margin-top: 5rem; font-weight: 600;">PET INFORMATION</p>
     
     <table>
         <tbody>
@@ -109,9 +109,8 @@
                 column_head.put("OWNER_NAME", "Owner");
                 column_head.put("WEIGHT", "Weight");
                 column_head.put("BREED", "Breed");
-                column_head.put("GENDER", "Gender");
+                column_head.put("PET_GENDER", "Gender");
                 column_head.put("AGE", "Age");
-                column_head.put("DATEOFBIRTH", "Date of Birth");
                 
                 Set<String> keys = column_head.keySet();
                 System.out.println(column_head);
@@ -133,7 +132,7 @@
                     </tr>
                 <% } %>
                 <<tr><td colspan="2">
-                                <button>Edit</button>
+                                <a href="../Pages/update_pet_details.html"><button>Edit</button></a>
                             </td></tr>
                 
                 

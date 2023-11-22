@@ -79,7 +79,6 @@ body {
   color: #fc7209;
 }
 .right-side .input-box{
-
   height: 40px;
   width: 300px;
   margin: 12px 0;
@@ -102,7 +101,7 @@ body {
   min-height: 110px;
 }
 .right-side .input-box textarea{
-  padding-top: 6px;
+  padding-top: px;
 }
 .right-side .button{
   display: inline-block;
@@ -112,14 +111,16 @@ body {
   color: #fefcfc;
   font-size: 18px;
   outline: none;
-  border-radius:34.50;
   padding:18px 55px;
   border: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 25px;
   background: #C45719;
   cursor: pointer;
   transition: all 0.3s ease;
+  height: 40px;
+  width:100px;
+  font-family: 'DM Sans';
 }
 .button input[type="submit"]:hover{
   background: orangered;
