@@ -132,7 +132,7 @@
                     </tr>
                 <% } %>
                 <<tr><td colspan="2">
-                                <button>Edit</button>
+                                <a href="../Pages/update_pet_details.html"><button>Edit</button></a>
                             </td></tr>
                 
                 
