@@ -137,7 +137,7 @@
                             }
                         %>
                         <td>
-                           
+                            <button onclick="deleteRecord('<%=ors.getString(1)%>')">Edit</button>
                             <button onclick="deleteRecord('<%=ors.getString(1)%>')">Delete</button>
                         </td>
                     </tr>

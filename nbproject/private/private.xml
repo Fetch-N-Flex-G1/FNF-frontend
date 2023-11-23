@@ -3,15 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/home.jsp</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/DeleteUser.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/delete_user.jsp</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/UserDetails.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/PetDetails.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/web/JSPs/log_out.jsp</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/Login.java</file>
-            <file>file:/home/ujucoco/MyProjects/Minor%20Project/Fetch-N-Flex/src/java/servlets/UpdatePetDetails.java</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/servlets/DeleteUser.java</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/Pages/personal_info.html</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/DoctorDisplay.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/Pages/fed.html</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/helperclasses/ReadDBProps.java</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/home.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/Pages/reminders.html</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/Admin_Feedback.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/subscription_fees.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/DietInput.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/Pages/user_details.html</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/src/java/helperclasses/SQLConnection.java</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/pet_details.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/Admin_Subscribers.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/Admin_User_Details.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/JSPs/calculateDiet.jsp</file>
+            <file>file:/home/baishali/Documents/MinorTechno/Fetch-N-Flex/web/Pages/contact%20us.html</file>
         </group>
     </open-files>
 </project-private>

@@ -74,7 +74,7 @@ public class DeleteUser extends HttpServlet {
             session.invalidate();
             System.out.print("Total result : " + results);
             if(results>5){
-                out.println("<h1>All user data deleted</h1>");
+                out.println("<h1 style=\"background-color: #000000; color: #d9570f; text-align: center;\">All user data deleted</h1>");
                 out.println("<a href = '../../../Fetch-N-Flex/web/index.html'><p>ok</p></a>");
             }
             else{

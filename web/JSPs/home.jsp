@@ -57,10 +57,11 @@
     <div class="main">
         <div class="top">
             <h1>Fetch N Flex</h1>
-            <img src="../../images/anirban.jpg" alt="" onclick="showGreyBox()">
+           
+            <img src="../images/Baishali.jpg" alt="" onclick="showGreyBox()">
             <div class="grey-box" id="greyBox">
                 <div class="top-part">
-                    <img src="../../images/anirban.jpg" alt="">                    
+                    <img src="../images/Baishali.jpg" alt="">                    
                     <div>
                         <h2 class="username">Hi, <%= name%>!</h1>
                         <h5 class="e-mail"><%= email%></h5>
