@@ -28,6 +28,8 @@ public class SQLConnection {
     
    
     public boolean exists(String table_name) throws SQLException{
+        if (oconn == null)
+            oconn=connect();
         PreparedStatement stmt = oconn.prepareStatement("SELECT TABLE_NAME FROM ALL_TABLES WHERE TABLE_NAME = ?");
         stmt.setString(1, table_name);
              ResultSet tables = stmt.executeQuery();

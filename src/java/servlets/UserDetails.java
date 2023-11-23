@@ -23,7 +23,6 @@ public class UserDetails extends HttpServlet {
     // STEP 1: DECLARING ORACLE OBJECTS
   
     OraclePreparedStatement ops;
-    ResultSet rs;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -41,12 +40,17 @@ public class UserDetails extends HttpServlet {
         pw.println("</head>");
         pw.println("<body>");
         pw.println("<h1>Servlet Register</h1>");
-            SF_NAME = request.getParameter("f_name");
-            SL_NAME = request.getParameter("l_name");
-            SPH_NO = request.getParameter("ph_no");
-            SADDRESS= request.getParameter("address");
-            SGENDER = request.getParameter("gender");
-            SEMAIL= userEmail;
+        SF_NAME = request.getParameter("f_name");
+        SL_NAME = request.getParameter("l_name");
+        SPH_NO = request.getParameter("ph_no");
+        SADDRESS= request.getParameter("address");
+        SGENDER = request.getParameter("gender");
+        if (SGENDER.toLowerCase().equals("m"))
+            SGENDER = "Male";
+        else if (SGENDER.toLowerCase().equals("f"))
+            SGENDER = "Female";
+        
+        SEMAIL= userEmail;
         pw.println("<body style=\"background-color: #0E0B0B;\">");
         pw.println("<h1 style=\"color: #d0540e;text-align: center;font-size: 40px;\">Fetch and Flex</h1>");
         
