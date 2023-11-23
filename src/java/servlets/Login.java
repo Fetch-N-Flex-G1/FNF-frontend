@@ -26,14 +26,14 @@ public class Login extends HttpServlet {
     private static final String SELECT_QUERY = "SELECT EMAIL, PASSWORD FROM user_creds WHERE EMAIL=? AND PASSWORD=?";
     static OracleConnection oconn;
     
-    @Override
-    public void init() throws ServletException {
-        try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    public void init() throws ServletException {
+//        try {
+//            Class.forName("oracle.jdbc.driver.OracleDriver");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -44,9 +44,6 @@ public class Login extends HttpServlet {
             String userEmail = request.getParameter("SEMAIL");
             String userPassword = request.getParameter("SPASS"); 
             
-            OraclePreparedStatement ops;
-            OracleResultSet ors;
-            OracleResultSetMetaData orsmd;
             
             SQLConnection sqlcon = new SQLConnection();
             oconn = null;
