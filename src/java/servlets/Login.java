@@ -115,8 +115,9 @@ public class Login extends HttpServlet {
 //                    response.sendRedirect("../../../Fetch-N-Flex/Pages/user_details.html");
                 }
                 if (ors.next()) {
-                            for (int counter = 1; counter < orsmd.getColumnCount(); counter++) {
+                            for (int counter = 1; counter <= orsmd.getColumnCount(); counter++) {
                                             String column_name = orsmd.getColumnName(counter);
+                                            System.out.println("Current column : "+column_name);
                                             String column_value = ors.getString(counter);
                                             user_details.setAttribute(column_name, column_value);
 
@@ -156,8 +157,10 @@ public class Login extends HttpServlet {
     //                response.sendRedirect("../../../Fetch-N-Flex/Pages/PetDetails.html");
                 }
                 if (ors.next()) {
-                            for (int counter = 1; counter < orsmd.getColumnCount(); counter++) {
+                            for (int counter = 1; counter <= orsmd.getColumnCount(); counter++) {
                                             String column_name = orsmd.getColumnName(counter);
+                                            System.out.println("Current column : "+column_name);
+
                                             String column_value = ors.getString(counter);
                                             user_details.setAttribute(column_name, column_value);
 

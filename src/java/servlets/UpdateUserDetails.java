@@ -65,6 +65,10 @@ public class UpdateUserDetails extends HttpServlet {
             String SPH_NO = request.getParameter("ph_no")!= ""?request.getParameter("ph_no"):default_ph_no;
             String SADDRESS= request.getParameter("address")!= ""?request.getParameter("address"):default_address;
             String SGENDER = request.getParameter("gender")!= ""?request.getParameter("gender"):default_gender;
+            if (SGENDER.toLowerCase().equals("m"))
+                SGENDER = "Male";
+            else if (SGENDER.toLowerCase().equals("f"))
+                SGENDER = "Female";
             
             String SEMAIL= userEmail;
 //            System.out.println(SF_NAME+SPH_NO+SADDRESS+SGENDER+SEMAIL);
@@ -83,8 +87,7 @@ public class UpdateUserDetails extends HttpServlet {
             ops.setString(4, SADDRESS);
             ops.setString(5, SGENDER);
             ops.setString(6,SEMAIL);
- 
-            System.out.println(SEMAIL);
+            
             int rowsUpdated = ops.executeUpdate();
             if (rowsUpdated > 0) {
 //                conn.commit();
