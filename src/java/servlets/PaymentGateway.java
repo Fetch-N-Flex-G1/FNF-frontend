@@ -54,9 +54,9 @@ public class PaymentGateway extends HttpServlet {
             int rowsInserted = ops.executeUpdate();
             if (rowsInserted > 0) {
                 pw.println("<h1 style=\"color: white;text-align: center;font-size: 30px;\">Payment Successfull</h1>");
-                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Thank You! For Subscribing.</p>");
+                pw.println("<p style=\"color: white; text-align: center; font-size: 16px;\">Thank You! Please log in to continue.</p>");
                 pw.println("<div style=\"text-align: center;\">");
-                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/JSPs/home.jsp'\">Go Back</button>");
+                pw.println("<button style=\"padding: 10px 35px; border-radius: 40px; background-color: #ee6010; color: white; border-color: transparent; font-size: 15px; font-weight: 650;\" onclick=\"window.location.href='./../../Fetch-N-Flex/Pages/login.html'\">Log In</button>");
                 pw.println("</div>");
 
 
